@@ -1,0 +1,15 @@
+@use "../mixins";
+
+/**
+ * Базовые стили типографики
+ */
+
+@include mixins.font-face('Libre Franklin', '../resources/fonts/librefranklin-light', 300, normal, swap);
+@include mixins.font-face('Libre Franklin', '../resources/fonts/librefranklin-regular', 400, normal, swap);
+@include mixins.font-face('Libre Franklin', '../resources/fonts/librefranklin-medium', 500, normal, swap);
+@include mixins.font-face('Zen Kaku Gothic Anique', '../resources/fonts/ZenKakuGothicAntique-Light', 300, normal, swap);
+@include mixins.font-face('Zen Kaku Gothic Anique', '../resources/fonts/ZenKakuGothicAntique-Regular', 400, normal, swap);
+@include mixins.font-face('Zen Kaku Gothic Anique', '../resources/fonts/ZenKakuGothicAntique-Medium', 500, normal, swap);
+
+@include mixins.font-face('TT Interphases', '../resources/fonts/TT_Interphases_Pro_Trial_Variable', 500, normal, swap);
+@include mixins.font-face('TT Interphases', '../resources/fonts/TT_Interphases_Pro_Trial_Variable', 700, normal, swap);
