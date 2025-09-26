@@ -6,7 +6,7 @@ function initVideoAnimation() {
     const video = document.querySelector('.banner__video video');
     const header = document.querySelector('.header');
     const title = document.querySelector('.banner__title');
-    
+
     if (!videoContainer || !video || !header || !title) return;
 
     // Создаем основную временную линию анимации

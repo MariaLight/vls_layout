@@ -62,6 +62,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        margin-bottom: 40px;
     }
 
     &__title {
@@ -122,4 +123,175 @@
         color: #00A652;
         text-align: center;
     }
+
+    &__titles {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+        margin-bottom: 30px;
+
+        &__title {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: variables.$font-family-primary;
+            line-height: 1.3;
+            color: #fff;
+            text-wrap: balance;
+            text-transform: uppercase;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 80px;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+        counter-increment: problems-card;
+
+        &__left,
+        &__right {
+            padding: 25px 30px;
+            border: 1px solid #2F2F2F;
+            border-radius: 30px;
+            background-color: #1E1E1E;
+        }
+
+        &__left {
+            &__header {
+                display: flex;
+                align-items: start;
+                gap: 20px;
+            }
+
+            &__title {
+                font-size: 16px;
+                font-weight: 400;
+                font-family: variables.$font-family-primary;
+                line-height: 1.3;
+                color: #fff;
+                text-transform: uppercase;
+                text-wrap: balance;
+            }
+
+            &__icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                margin-top: -15px;
+                margin-right: -15px;
+                flex-shrink: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__img {
+                width: 100%;
+                height: 220px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            &__text {
+                font-size: 12px;
+                font-weight: 500;
+                font-family: variables.$font-family-primary;
+                line-height: 1.4;
+                color: #fff;
+                text-wrap: balance;
+                text-transform: uppercase;
+                margin-top: 10px;
+                padding-right: 20px;
+
+            }
+        }
+
+        &__right {
+            background-image: url(../img/base/problems-pattern.svg);
+            background-size: 205px 320px;
+            background-position: 100% 30px;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 50px;
+            padding-right: 180px;
+
+            &::after {
+                content: '0' counter(problems-card);
+                position: absolute;
+                top: 10px;
+                right: 40px;
+                color: #fff;
+                font-size: 70px;
+                font-weight: 400;
+                font-family: variables.$font-family-primary;
+                line-height: 1.3;
+                text-transform: uppercase;
+                -webkit-text-stroke: 1px #2f2f2f;
+
+            }
+
+            &__title {
+                font-size: 24px;
+                font-weight: 500;
+                font-family: variables.$font-family-headings;
+                line-height: 1.24;
+                color: #fff;
+                text-transform: uppercase;
+                text-wrap: balance;
+            }
+
+            &__text {
+                font-size: 16px;
+                font-weight: 400;
+                font-family: variables.$font-family-primary;
+                line-height: 1.4;
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 0;
+
+                    li {
+                        position: relative;
+                        padding-left: 20px;
+
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 7px;
+                            width: 10px;
+                            display: block;
+                            height: 10px;
+                            background-image: url(../img/icons/arrow-bottom.svg);
+                            background-size: contain;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
 }
