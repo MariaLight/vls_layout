@@ -174,29 +174,28 @@
   }
 }
 
-@mixin gradient-border-bottom {
-  position: relative;
+@mixin hover-link {
+  &:hover {
+    color: #00A652;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.125) 0%, rgba(0, 0, 0, 0.375) 50%, rgba(102, 102, 102, 0.125) 100%);
+  &:active {
+    color: #8DF9B5;
+    text-decoration: none;
+
   }
 }
-@mixin gradient-border-top {
-  position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.125) 0%, rgba(0, 0, 0, 0.375) 50%, rgba(102, 102, 102, 0.125) 100%);
+@mixin hover-button {
+  &:hover {
+    background-color: #008B54;
+    border-color: #43D59B;
+  }
+
+  &:active {
+    background-color: #00462A;
+    border-color: #0C6B30;
   }
 }
