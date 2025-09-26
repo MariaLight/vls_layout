@@ -33,48 +33,66 @@ function initVideoAnimation() {
         }
     });
 
-    // Фаза 1: Скрытие шапки и заголовка (0-25% скролла)
-    masterTimeline
-        .to(header, {
-            opacity: 0,
-            y: -100,
-            duration: 0.25,
-            ease: "power2.out"
-        }, 0)
-        .to(title, {
-            opacity: 0,
-            y: -50,
-            duration: 0.25,
-            ease: "power2.out"
-        }, 0.1);
+    // Скрытие шапки и заголовка - привязано к скроллу
+    gsap.to(header, {
+        opacity: 0,
+        y: -100,
+        ease: "none",
+        scrollTrigger: {
+            trigger: videoContainer,
+            start: "top top",
+            end: "top bottom",
+            scrub: 1
+        }
+    });
 
-    // Фаза 2: Раскрытие видео на весь экран (25-40% скролла)
-    masterTimeline
-        .to(videoContainer, {
-            scale: 1.43, // Масштабируем до полной ширины экрана
-            duration: 0.15,
-            ease: "power2.inOut"
-        }, 0.25)
-        .to(videoContainer, {
-            borderRadius: 0,
-            duration: 0.05,
-            ease: "power2.inOut"
-        }, 0.3);
+    gsap.to(title, {
+        opacity: 0,
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+            trigger: videoContainer,
+            start: "top top",
+            end: "top bottom",
+            scrub: 1
+        }
+    });
 
-    // Фаза 3: Пауза с полной шириной экрана (40-70% скролла)
-    masterTimeline
-        .to({}, {
-            duration: 0.3, // Пауза - ничего не происходит
-            ease: "none"
-        }, 0.4);
+    // Раскрытие видео на весь экран - привязано к скроллу
+    gsap.to(videoContainer, {
+        scale: 1.43, // Масштабируем до полной ширины экрана
+        ease: "none",
+        scrollTrigger: {
+            trigger: videoContainer,
+            start: "top top",
+            end: "top bottom",
+            scrub: 1
+        }
+    });
 
-    // Фаза 4: Параллакс эффект - медленное движение видео (70-100% скролла)
-    masterTimeline
-        .to(video, {
-            yPercent: -30,
-            duration: 0.3,
-            ease: "none"
-        }, 0.7);
+    // Убирание скруглений - привязано к скроллу
+    // gsap.to(videoContainer, {
+    //     borderRadius: 0,
+    //     ease: "none",
+    //     scrollTrigger: {
+    //         trigger: videoContainer,
+    //         start: "top top",
+    //         end: "top 30%",
+    //         scrub: 1
+    //     }
+    // });
+
+    // Параллакс эффект - привязано к скроллу
+    gsap.to(video, {
+        yPercent: -10,
+        ease: "none",
+        scrollTrigger: {
+            trigger: videoContainer,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        }
+    });
 
     // Устанавливаем transform-origin для правильного масштабирования
     gsap.set(videoContainer, {
