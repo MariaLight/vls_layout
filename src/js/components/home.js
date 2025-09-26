@@ -9,116 +9,69 @@ function initVideoAnimation() {
     
     if (!videoContainer || !video || !header || !title) return;
 
-    // Создаем основную анимацию с задержкой
-    const mainTimeline = gsap.timeline({
+    // Создаем основную временную линию анимации
+    const masterTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: videoContainer,
-            start: "top center",
-            end: "bottom center",
+            start: "top top",
+            end: "bottom top",
             scrub: 1,
+            pin: true,
+            anticipatePin: 1,
             onEnter: () => {
-                // Задержка 2 секунды перед раскрытием видео на весь экран
-                setTimeout(() => {
-                    videoContainer.classList.add('fullscreen');
-                }, 2000);
+                document.body.style.overflow = 'hidden';
             },
             onLeave: () => {
-                // При выходе из зоны триггера - возвращаем обычное состояние
-                videoContainer.classList.remove('fullscreen');
+                document.body.style.overflow = 'auto';
             },
             onEnterBack: () => {
-                // При возврате назад
-                videoContainer.classList.add('fullscreen');
+                document.body.style.overflow = 'hidden';
             },
             onLeaveBack: () => {
-                // При уходе назад
-                videoContainer.classList.remove('fullscreen');
+                document.body.style.overflow = 'auto';
             }
         }
     });
 
-    // Анимация скрытия шапки с задержкой
-    gsap.to(header, {
-        opacity: 0,
-        y: -100,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: videoContainer,
-            start: "top center",
-            end: "top 20%",
-            scrub: 1,
-            onEnter: () => {
-                // Задержка 1.5 секунды перед скрытием шапки
-                setTimeout(() => {
-                    header.classList.add('hidden');
-                }, 1500);
-            },
-            onLeaveBack: () => {
-                header.classList.remove('hidden');
-            }
-        }
-    });
-
-    // Анимация скрытия заголовка с задержкой
-    gsap.to(title, {
-        opacity: 0,
-        y: -50,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: videoContainer,
-            start: "top center",
-            end: "top 20%",
-            scrub: 1,
-            onEnter: () => {
-                // Задержка 1 секунда перед скрытием заголовка
-                setTimeout(() => {
-                    gsap.to(title, {
-                        opacity: 0,
-                        y: -50,
-                        duration: 0.8,
-                        ease: "power2.out"
-                    });
-                }, 1000);
-            }
-        }
-    });
-
-    // Анимация раскрытия видео на весь экран
-    mainTimeline
-        .to(videoContainer, {
-            scale: 1.1,
-            duration: 0.3,
+    // Фаза 1: Скрытие шапки и заголовка (0-25% скролла)
+    masterTimeline
+        .to(header, {
+            opacity: 0,
+            y: -100,
+            duration: 0.25,
             ease: "power2.out"
-        })
-        .to(videoContainer, {
-            scale: 1,
-            duration: 0.7,
-            ease: "power2.inOut"
-        }, "-=0.1");
+        }, 0)
+        .to(title, {
+            opacity: 0,
+            y: -50,
+            duration: 0.25,
+            ease: "power2.out"
+        }, 0.1);
 
-    // Параллакс эффект для видео с задержкой
-    gsap.to(video, {
-        y: -150,
-        duration: 2,
-        ease: "none",
-        scrollTrigger: {
-            trigger: videoContainer,
-            start: "top center",
-            end: "bottom center",
-            scrub: 1,
-            onEnter: () => {
-                // Задержка 1.5 секунды перед началом параллакс эффекта
-                setTimeout(() => {
-                    gsap.to(video, {
-                        y: -150,
-                        duration: 1.5,
-                        ease: "none"
-                    });
-                }, 1500);
-            }
-        }
+    // Фаза 2: Раскрытие видео на весь экран (25-50% скролла)
+    masterTimeline
+        .to(videoContainer, {
+            scale: 1.43, // Масштабируем до полной ширины экрана
+            duration: 0.25,
+            ease: "power2.inOut"
+        }, 0.25)
+        .to(videoContainer, {
+            borderRadius: 0,
+            duration: 0.1,
+            ease: "power2.inOut"
+        }, 0.3);
+
+    // Фаза 3: Параллакс эффект - медленное движение видео (50-100% скролла)
+    masterTimeline
+        .to(video, {
+            yPercent: -30,
+            duration: 0.5,
+            ease: "none"
+        }, 0.5);
+
+    // Устанавливаем transform-origin для правильного масштабирования
+    gsap.set(videoContainer, {
+        transformOrigin: "center center"
     });
 }
 
