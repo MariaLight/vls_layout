@@ -64,8 +64,8 @@ function initVideoAnimation() {
         ease: "none",
         scrollTrigger: {
             trigger: videoContainer,
-            start: "top top",
-            end: "top bottom",
+            start: "top 10%",
+            end: "top 90%",
             scrub: 1
         }
     });
