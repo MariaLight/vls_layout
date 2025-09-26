@@ -48,26 +48,33 @@ function initVideoAnimation() {
             ease: "power2.out"
         }, 0.1);
 
-    // Фаза 2: Раскрытие видео на весь экран (25-50% скролла)
+    // Фаза 2: Раскрытие видео на весь экран (25-40% скролла)
     masterTimeline
         .to(videoContainer, {
             scale: 1.43, // Масштабируем до полной ширины экрана
-            duration: 0.25,
+            duration: 0.15,
             ease: "power2.inOut"
         }, 0.25)
         .to(videoContainer, {
             borderRadius: 0,
-            duration: 0.1,
+            duration: 0.05,
             ease: "power2.inOut"
         }, 0.3);
 
-    // Фаза 3: Параллакс эффект - медленное движение видео (50-100% скролла)
+    // Фаза 3: Пауза с полной шириной экрана (40-70% скролла)
+    masterTimeline
+        .to({}, {
+            duration: 0.3, // Пауза - ничего не происходит
+            ease: "none"
+        }, 0.4);
+
+    // Фаза 4: Параллакс эффект - медленное движение видео (70-100% скролла)
     masterTimeline
         .to(video, {
             yPercent: -30,
-            duration: 0.5,
+            duration: 0.3,
             ease: "none"
-        }, 0.5);
+        }, 0.7);
 
     // Устанавливаем transform-origin для правильного масштабирования
     gsap.set(videoContainer, {
