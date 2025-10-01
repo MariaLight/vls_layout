@@ -68,6 +68,21 @@ function addAnimationClasses() {
         loadingContent.setAttribute('data-wow-duration', '0.8s');
         loadingContent.setAttribute('data-wow-delay', '0.3s');
     }
+
+    // CTA блок
+    const ctaLeft = document.querySelector('.cta__left');
+    if (ctaLeft) {
+        ctaLeft.classList.add('wow', 'animate__fadeInUp');
+        ctaLeft.setAttribute('data-wow-duration', '0.8s');
+        ctaLeft.setAttribute('data-wow-delay', '0.1s');
+    }
+
+    const ctaRight = document.querySelector('.cta__right');
+    if (ctaRight) {
+        ctaRight.classList.add('wow', 'animate__fadeInUp');
+        ctaRight.setAttribute('data-wow-duration', '0.8s');
+        ctaRight.setAttribute('data-wow-delay', '0.2s');
+    }
 }
 
 function initAnimations() {
