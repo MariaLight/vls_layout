@@ -100,5 +100,4 @@ function initVideoAnimation() {
     });
 }
 
-// Экспортируем функцию для использования в main.js
 export { initVideoAnimation };
