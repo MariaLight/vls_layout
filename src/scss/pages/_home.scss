@@ -88,6 +88,7 @@
             border-radius: 50%;
             background-color: #fff;
             border: 6px solid rgba(0, 152, 91, 1);
+            box-shadow: 0px 0px 10px 5px #FFFFFF1A;
         }
 
         span {
@@ -301,5 +302,133 @@
 
     }
 
+
+}
+
+.about {
+    &__inner {
+        padding: 45px 0 136px;
+        background-image: url(../img/base/planet.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__content {
+        margin-top: 105px;
+        display: flex;
+        align-items: start;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    &__description {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: variables.$font-family-primary;
+        line-height: 1.4;
+        color: #fff;
+        text-wrap: balance;
+        max-width: 390px;
+        padding-left: 35px;
+        color: #BABABA;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        justify-content: space-between;
+        min-height: 210px;
+        border: 1px solid #2F2F2F;
+        border-radius: 30px;
+        background-color: #1E1E1E;
+        padding: 24px 24px;
+        position: relative;
+
+        &__header {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            justify-content: space-between;
+            &__title {
+                font-size: 16px;
+                font-weight: 400;
+                font-family: variables.$font-family-primary;
+                line-height: 1.3;
+                color: #fff;
+                text-transform: uppercase;
+                text-wrap: balance;
+            }
+
+            &__icon {
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                margin-top: -17px;
+                margin-right: -17px;
+                flex-shrink: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        
+        
+        &__text {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: variables.$font-family-primary;
+            line-height: 1.4;
+            color: #A7A7A7;
+            text-wrap: balance;
+            padding-right: 10px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 18px;
+            right: 10px;
+            width: 30px;
+            display: block;
+            height: 64px;
+            background-size: contain;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+        &:nth-child(1) {
+            &::after {
+                background-image: url(../../img/icons/glowing-dots-1.svg);
+            }
+        }
+        &:nth-child(2) {
+            &::after {
+                background-image: url(../../img/icons/glowing-dots-2.svg);
+            }
+        }
+        &:nth-child(3) {
+            &::after {
+                background-image: url(../../img/icons/glowing-dots-3.svg);
+            }
+        }
+        &:nth-child(4) {
+            &::after {
+                background-image: url(../../img/icons/glowing-dots-4.svg);
+            }
+        }
+    }
 
 }
