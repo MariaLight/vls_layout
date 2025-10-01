@@ -53,6 +53,21 @@ function addAnimationClasses() {
         contactsInner.setAttribute('data-wow-duration', '1s');
         contactsInner.setAttribute('data-wow-delay', '0.2s');
     }
+
+    // Loading блок
+    const loadingHeader = document.querySelector('.loading__header .loading__tabs-main');
+    if (loadingHeader) {
+        loadingHeader.classList.add('wow', 'animate__fadeInUp');
+        loadingHeader.setAttribute('data-wow-duration', '0.8s');
+        loadingHeader.setAttribute('data-wow-delay', '0.2s');
+    }
+
+    const loadingContent = document.querySelector('.loading__content');
+    if (loadingContent) {
+        loadingContent.classList.add('wow', 'animate__fadeInUp');
+        loadingContent.setAttribute('data-wow-duration', '0.8s');
+        loadingContent.setAttribute('data-wow-delay', '0.3s');
+    }
 }
 
 function initAnimations() {
