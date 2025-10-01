@@ -1226,6 +1226,97 @@
     }
 }
 
+.cta {
+    min-height: 1000px;
+    background-image: url(../img/base/cta-bg.png);
+    background-size: 100% 900px;
+    background-position: top center ;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+    }
+
+    &__left, &__right {
+        padding: 30px;
+        border: 1px solid #2F2F2F;
+        border-radius: 30px;
+        background-color: #1E1E1E;
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        &__title {
+            font-size: 38px;
+            font-weight: 500;
+            font-family: variables.$font-family-headings;
+            line-height: 1.2;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        &__tag {
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 100px;
+            background-color: #151515;
+            font-size: 10px;
+            font-weight: 500;
+            font-family: variables.$font-family-secondary;
+            line-height: 1.4;
+            color: #00A652;
+            text-transform: uppercase;
+            width: fit-content;
+            text-align: center;
+        }
+
+        &__text {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: variables.$font-family-primary;
+            line-height: 1.5;
+            color: #fff;
+            margin-top: auto;
+            text-wrap: balance;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    &__form-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 .contacts {
     &__inner {
         display: grid;
