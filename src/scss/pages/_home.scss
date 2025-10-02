@@ -1667,6 +1667,11 @@
                     background: radial-gradient(circle, rgba(#4A4F51, 1) 27%, rgba(#4A4F51, 0) 80%);
                 }
             }
+            @include mixins.media-down(sm) {
+                &::after {
+                    content: none;
+                }
+            }
         }
 
         &__btn {
@@ -1721,6 +1726,11 @@
         background-size: contain;
         background-position: bottom 100px center;
     }
+    @include mixins.media-down(sm) {
+        background-image: url(../img/base/cta-bg-mobile.png);
+        background-size: contain;
+        background-position: top center;
+    }
 
     &__inner {
         display: grid;
@@ -1749,12 +1759,20 @@
         @include mixins.media-down(lg) {
             padding: 20px;
         }
+        @include mixins.media-down(sm) {
+            padding: 25px 20px;
+        }
 
         &__header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 16px;
+            @include mixins.media-down(sm) {
+                gap: 15px;
+                flex-direction: column-reverse;
+                align-items: start;
+            }
         }
 
         &__title {
@@ -1767,6 +1785,9 @@
 
             @include mixins.media-down(lg) {
                 font-size: 26px;
+            }
+            @include mixins.media-down(sm) {
+                font-size: 20px;
             }
         }
 
@@ -1783,6 +1804,10 @@
             text-transform: uppercase;
             width: fit-content;
             text-align: center;
+            @include mixins.media-down(sm) {
+                font-size: 10px;
+                padding: 8px 25px;
+            }
         }
 
         &__text {
@@ -1796,6 +1821,9 @@
 
             @include mixins.media-down(lg) {
                 font-size: 14px;
+            }
+            @include mixins.media-down(sm) {
+                font-size: 12px;
             }
 
             p {
@@ -1814,6 +1842,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+        @include mixins.media-down(sm) {
+            gap: 15px;
+            grid-template-columns: 1fr;
+        }
     }
 
     &__form-btn {
@@ -2296,6 +2328,11 @@
             &:focus {
                 outline: none;
             }
+
+            @include mixins.media-down(sm) {
+                font-size: 12px;
+                padding: 17px 20px 17px 57px;
+            }
         }
 
         &__textarea {
@@ -2341,6 +2378,9 @@
                 font-family: variables.$font-family-primary;
                 line-height: 1.25;
                 color: #8a8a8a;
+                @include mixins.media-down(sm) {
+                    font-size: 9px;
+                }
             }
         }
 
