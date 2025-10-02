@@ -172,7 +172,7 @@ textarea {
 .section {
     padding: 75px 0;
 
-    @include mixins.media-down(md) {
+    @include mixins.media-down(lg) {
         padding: 20px 0;
     }
 }

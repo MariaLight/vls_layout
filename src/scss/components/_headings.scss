@@ -14,48 +14,9 @@
     padding: 0;
     margin-bottom: 10px;
 }
-.section__title {
-    margin-bottom: 30px;
-}
-
-.page-title {
-    font-size: 32px;
-    font-weight: variables.$font-weight-medium;
-    line-height: variables.$line-height-base;
-    color: variables.$text-color;
-    padding: 0;
-    margin-bottom: 30px;
-}
-@include mixins.media-down(md) {
+@include mixins.media-down(lg) {
     .title {
-        font-size: 48px;
-        margin-bottom: 30px;
-    }
-    .section__title {
-        margin-bottom: 20px;
-        font-size: 36px;
-    }
-    
-    .page-title {
-        font-size: 32px;
-        font-weight: variables.$font-weight-medium;
-        line-height: variables.$line-height-base;
-        color: variables.$text-color;
-        padding: 0;
-        margin-bottom: 30px;
-    }
-}
-@include mixins.media-down(sm) {
-    .title {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-    .section__title {
-        font-size: 24px;
-    }
-    
-    .page-title {
-        font-size: 24px;
+        font-size: 26px;
         margin-bottom: 30px;
     }
 }
