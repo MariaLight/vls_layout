@@ -1582,6 +1582,9 @@ background-position: bottom 100px center;
         margin-bottom: 60px;
         border-radius: 26px;
         overflow: hidden;
+        @include mixins.media-down(lg) {
+            height: 460px;
+        }
 
         video {
             width: 100%;
@@ -1596,6 +1599,7 @@ background-position: bottom 100px center;
         gap: 30px;
 
         position: relative;
+
 
         &::before {
             content: '';
@@ -1619,6 +1623,9 @@ background-position: bottom 100px center;
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+        @include mixins.media-down(lg) {
+            gap: 10px;
+        }
     }
 
     &__tab-main {
@@ -1638,6 +1645,10 @@ background-position: bottom 100px center;
         width: fit-content;
         text-align: center;
         text-wrap: balance;
+
+        @include mixins.media-down(lg) {
+            padding: 15px 40px;
+        }
 
         &:hover {
             background-color: #00AB67;
@@ -1663,6 +1674,9 @@ background-position: bottom 100px center;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            @include mixins.media-down(lg) {
+                gap: 16px;
+            }
 
             &__subtabs__content {
                 display: none;
@@ -1680,6 +1694,11 @@ background-position: bottom 100px center;
                 display: flex;
                 align-items: start;
                 gap: 20px;
+                @include mixins.media-down(lg) {
+                    gap: 16px;
+                    padding: 18px 12px;
+                    flex-direction: column;
+                }
 
                 &__img {
                     width: 325px;
@@ -1687,11 +1706,16 @@ background-position: bottom 100px center;
                     flex-shrink: 0;
                     overflow: hidden;
                     border-radius: 14px;
+                    @include mixins.media-down(lg) {
+                        width: 120px;
+                        height: 120px;
+                    }
 
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        object-position: top;
                     }
                 }
 
@@ -1756,6 +1780,10 @@ background-position: bottom 100px center;
                     background-color: #1E1E1E;
                     cursor: pointer;
                     transition: all 0.3s ease;
+                    @include mixins.media-down(lg) {
+                        gap: 18px;
+                        padding: 20px 25px;
+                    }
 
                     &:hover {
                         border: 1px solid #00A652;
@@ -1795,6 +1823,9 @@ background-position: bottom 100px center;
                             color: #fff;
                             text-transform: uppercase;
                             text-align: left;
+                            @include mixins.media-down(lg) {
+                                font-size: 14px;
+                            }
                         }
 
                         &__position {
@@ -1802,7 +1833,11 @@ background-position: bottom 100px center;
                             font-weight: 400;
                             font-family: variables.$font-family-primary;
                             line-height: 1.4;
+                            text-align: left;
                             color: #A7A7A7;
+                            @include mixins.media-down(lg) {
+                                font-size: 14px;
+                            }
                         }
                     }
 
