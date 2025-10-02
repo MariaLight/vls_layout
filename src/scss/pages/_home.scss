@@ -1451,6 +1451,9 @@
                 color: #BABABA;
                 margin-top: auto;
                 text-wrap: balance;
+                @include mixins.media-down(sm) {
+                    font-size: 12px;
+                }
 
                 span {
                     font-size: 16px;
@@ -1463,6 +1466,9 @@
 
                     @include mixins.media-down(lg) {
                         font-size: 14px;
+                    }
+                    @include mixins.media-down(sm) {
+                        font-size: 16px;
                     }
                 }
             }
