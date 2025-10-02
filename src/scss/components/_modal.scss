@@ -11,14 +11,14 @@
     z-index: 999;
     inset: 0;
     bottom: initial;
-    background: variables.$background-color;
+    background: rgba(variables.$background-color, 0.8);
     width: 100%;
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     opacity: 0;
     visibility: hidden;
     transition: opacity .2s, visibility .2s;
@@ -31,17 +31,104 @@
 
     &__inner {
         position: relative;
-        max-width: 100%;
-        width: fit-content
+        max-width: 95%;
+        width: fit-content;
+        padding-top: 60px;
     }
     &__content {
-        padding: variables.$spacing-md;
-        box-shadow: variables.$box-shadow;
+        padding: 80px 20px;
         background-color: variables.$background-color;
         width: 100%;   
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 500px;
+            height: 500px;
+            background-image: url(../img/base/bg/modal-auto-bg.svg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     }
     &__content::-webkit-scrollbar {
         width: 0;
         height: 0
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+
+.modal__auto {
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    &__card {
+        padding: 60px 40px;
+        background-color: #1E1E1E;
+        border: 1px solid #2f2f2f;
+
+        border-radius: 30px;
+        position: relative;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #BABABA;
+
+        span {
+            color: #00A652;
+
+        }
+        li {
+margin-bottom: 20px;
+        }
+
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: block;
+            width: 38px;
+            height: 38px;
+            background-image: url(../img/icons/modal-svg.svg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     }
 }

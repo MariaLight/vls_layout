@@ -354,7 +354,7 @@
                           <div class="tariffs__content-sub__inner__img">
                             <img src="./img/temp/auto.png" alt="">
                           </div>
-                          <button class="btn-main tariffs__content-sub__inner__btn">
+                          <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                             <img src="./img/icons/icon-arrow.svg" alt="">
                             <span>Условия</span>
                           </button>
@@ -458,7 +458,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto-2.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn"  data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -559,7 +559,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -659,7 +659,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -769,7 +769,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -869,7 +869,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -969,7 +969,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -1069,7 +1069,7 @@
                         <div class="tariffs__content-sub__inner__img">
                           <img src="./img/temp/auto.png" alt="">
                         </div>
-                        <button class="btn-main tariffs__content-sub__inner__btn">
+                        <button class="btn-main tariffs__content-sub__inner__btn" data-modal="modal-auto">
                           <img src="./img/icons/icon-arrow.svg" alt="">
                           <span>Условия</span>
                         </button>
@@ -1578,7 +1578,8 @@
                             <img src="./img/temp/team2.png" alt="">
                           </div>
                           <div class="team__content-main__inner__card__content">
-                            <div class="team__content-main__inner__card__content__title">Коннов Вадим Владиславович</div>
+                            <div class="team__content-main__inner__card__content__title">Коннов Вадим Владиславович
+                            </div>
                             <div class="team__content-main__inner__card__content__item">
                               <div class="team__content-main__inner__card__content__item__title">Должность</div>
                               <div class="team__content-main__inner__card__content__item__value">
@@ -1588,14 +1589,16 @@
                             <div class="team__content-main__inner__card__content__item">
                               <div class="team__content-main__inner__card__content__item__title">Опыт работы</div>
                               <div class="team__content-main__inner__card__content__item__value">
-                                <p>Более 9 лет на позиции Генерального директора в транспортной компании, занимающейся перевозкой лекарственных средств</p>
+                                <p>Более 9 лет на позиции Генерального директора в транспортной компании, занимающейся
+                                  перевозкой лекарственных средств</p>
                               </div>
                             </div>
                             <div class="team__content-main__inner__card__content__item">
                               <div class="team__content-main__inner__card__content__item__title">Образование/Повышение
                                 квалификации</div>
                               <div class="team__content-main__inner__card__content__item__value">
-                                <p>Повышение квалификации по программе “Обеспечение эффективного стратегического управления компанией”</p>
+                                <p>Повышение квалификации по программе “Обеспечение эффективного стратегического
+                                  управления компанией”</p>
                               </div>
                             </div>
                             <div class="team__content-main__inner__card__content__item">
@@ -1968,6 +1971,106 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal" id="modal-auto">
+      <button class="modal__close" data-modal-close>
+        <img src="./img/icons/close.svg" alt="">
+      </button>
+      <div class="modal__inner">
+        <div class="modal__content">
+          <div class="problems__header">
+            <h2 class="problems__title">
+              Условия автопарка/тарифов
+            </h2>
+            <div class="problems__content">
+              <div class="problems__text">
+              </div>
+              <span class="problems__tag">Условия</span>
+            </div>
+          </div>
+
+          <div class="modal__auto__cards">
+            <div class="modal__auto__card">
+              <ol>
+                <li>При перевозке по Москве и МО в случае пробега за МКАД, расчёт ведётся путём умножения километров,
+                  пройденных за МКАД, на тарифную ставку за километр.
+                </li>
+                <li>
+                  При перевозке по Российской Федерации полной машиной расчет пройденных километров транспортного
+                  средства производится в обе стороны (в круг).
+                </li>
+                <li>
+                  Расчет километража производится на основе данных сервиса Яндекс.Карты на дату осуществления перевозки.
+                  Маршрут строится автоматически, учитывая текущую дорожную ситуацию.
+                </li>
+                <li>
+                  При перевозке по Российской Федерации при необходимости заезда в закрытые территории (закрытый город,
+                  промышленные объекты) стоимость и возможность обсуждаются дополнительно (при этом необходимо
+                  обязательно указывать требования по въезду).
+                </li>
+                <li>
+                  Услуга по экспедированию груза включена в минимальный заказ.
+                </li>
+                <li>
+                  Приём заказов производится по рабочим дням с 09:00 до 15:00 по московскому времени. При подаче заказа
+                  в указанное время подача ТС гарантируется.
+                </li>
+                <li>
+                  В случае, если поручение экспедитору направлено позднее 15:00 дня, предшествующего дню подачи ТС под
+                  загрузку, тариф увеличивается на 10%.
+                </li>
+                <li>
+                  В случае, если необходимо подать ТС в день подачи заявки, тариф увеличивается на 10%.
+                </li>
+                <li>
+                  В случае, если необходимо принять заявку в праздничный день, то стоимость перевозки увеличивается на
+                  20%.
+                </li>
+                <li>
+                  Данные о транспортном средстве и водителе предоставляются после 18:00.
+                </li>
+                <li>При осуществлении междугородних перевозок заявка принимается не менее, чем за 24 часа до планируемой
+                  даты и времени исполнения заявки.</li>
+                <li>
+                  <span>Для каждой категории перевозок в пределах Москвы и Московской области предусмотрено определенное
+                    количество дополнительных точек загрузки/выгрузки. Информация о количестве доп. точек по каждой
+                    категории предоставляется в описании категории. За каждую доп. точку взимается дополнительная плата
+                    в размере от 200 (двухсот) рублей до 600 (шестисот) рублей в зависимости от типа категории.</span>
+                </li>
+              </ol>
+            </div>
+            <div class="modal__auto__card">
+              <ol start="13">
+                <li>Возможна услуга по подаче ТС с гидролифтом. Стоимость и возможность подачи обсуждаются
+                  дополнительно.</li>
+                <li>Загрузка/выгрузка по умолчанию задняя. Виды загрузки/выгрузки так же могут быть:
+                  верхняя/боковая/полная. Стоимость и возможность подачи обсуждаются дополнительно.</li>
+                <li>Для обеспечения подачи транспортного средства с кузовом необходимой высоты, при оформлении заявки
+                  необходимо указать максимальную высоту палета. Минимальной высоты паллета по умолчанию нет.</li>
+                <li>Свесы груза за пределы габаритов палеты недопустимы. Для подбора подходящего транспортного средства
+                  необходимо предоставить точные данные о размерах и характере свесов. В случае отсутствия или неполного
+                  предоставления данной информации, что может привести к невозможности размещения заявленного груза в
+                  кузове автомобиля, компания оставляет за собой право отказаться от перевозки с выставлением неустойки
+                  заказчику либо пересмотреть стоимость услуги с предоставлением подходящего ТС.</li>
+                <li>В случае, если для исполнения рейса требуется больше времени, чем установлено в минимальном заказе,
+                  то клиент оплачивает минимальный заказ и дополнительное время использования ТС. Тарификация
+                  поминутная.</li>
+                <li>В случае отказа грузополучателя в приемке товара (по вине отправителя/ заказчика) и возврата товара
+                  на склад отправителя, заказчик оплачивает дополнительно 50% от стоимости минимального заказа.</li>
+                <li>Тарифы на перевозку могут пересматриваться не более двух раз в год.</li>
+                <li>В период высокого сезона (например, конец года) стоимость перевозки может быть изменена. Стоимость в
+                  высокий сезон определяется по согласованию с заказчиком.</li>
+                <li>Передача сопроводительных документов может осуществляться:<br>
+                  - курьером в указанную дату (от 900 до 1800 рублей); <br>
+                  - почтовым отправлением (бесплатно).</li>
+                <li><span>В случае, если необходимо осуществить переезд, где ТС будет необходимо сделать несколько переездов
+                  туда-обратно, стоимость и возможность подачи обсуждается дополнительно.</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
