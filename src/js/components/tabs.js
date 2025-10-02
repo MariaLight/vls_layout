@@ -100,6 +100,37 @@ function initTeamTabs() {
             const activeContent = document.querySelector(`[data-content="${tabName}"]`);
             if (activeContent) {
                 activeContent.classList.add('active');
+                initTeamSubTabs(activeContent);
+            }
+        });
+    });
+
+    // Инициализируем подтабы для активного контента
+    const activeContent = document.querySelector('.team__content-main.active');
+    if (activeContent) {
+        initTeamSubTabs(activeContent);
+    }
+}
+
+function initTeamSubTabs(container) {
+    const subTabs = container.querySelectorAll('.team__tab-sub');
+    const subContents = container.querySelectorAll('[data-cubcontent]');
+
+    if (!subTabs.length || !subContents.length) {
+        return;
+    }
+
+    subTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const subtabName = tab.dataset.subtab;
+
+            subTabs.forEach(t => t.classList.remove('active'));
+            subContents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            const activeSubContent = container.querySelector(`[data-cubcontent="${subtabName}"]`);
+            if (activeSubContent) {
+                activeSubContent.classList.add('active');
             }
         });
     });
