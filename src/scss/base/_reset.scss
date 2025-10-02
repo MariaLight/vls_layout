@@ -50,6 +50,10 @@ html {
     @include mixins.media-down(lg) {
         overflow: hidden;
     }
+
+    @include mixins.media-down(lg) {
+        padding: 20px 0 80px;
+    }
 }
 
 .wrapper {

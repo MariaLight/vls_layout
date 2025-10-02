@@ -1857,6 +1857,10 @@
 .team {
     position: relative;
 
+    @include mixins.media-down(sm) {
+        margin-top: 80px;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -1881,11 +1885,16 @@
         @include mixins.media-down(lg) {
             height: 460px;
         }
+        @include mixins.media-down(sm) {
+            height: 240px;
+            margin-bottom: 30px;
+        }
 
         video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 26px;
         }
     }
 
@@ -1913,6 +1922,7 @@
 
 
 
+
     }
 
     &__tabs-main {
@@ -1923,6 +1933,7 @@
         @include mixins.media-down(lg) {
             gap: 10px;
         }
+
     }
 
     &__tab-main {
@@ -1945,6 +1956,10 @@
 
         @include mixins.media-down(lg) {
             padding: 15px 40px;
+        }
+        @include mixins.media-down(sm) {
+            padding: 13px 35px;
+            font-size: 10px;
         }
 
         &:hover {
@@ -1974,6 +1989,9 @@
 
             @include mixins.media-down(lg) {
                 gap: 16px;
+            }
+            @include mixins.media-down(sm) {
+                grid-template-columns: 1fr;
             }
 
             &__subtabs__content {
@@ -2157,6 +2175,9 @@
     background-size: 840px 820px;
     background-position: center;
     background-repeat: no-repeat;
+    @include mixins.media-down(sm) {
+        margin-top: 80px;
+    }
 
     &__inner {
         display: grid;
@@ -2165,6 +2186,9 @@
 
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr;
+        }
+        @include mixins.media-down(sm) {
+            gap: 10px;
         }
     }
 
@@ -2177,12 +2201,18 @@
         @include mixins.media-down(lg) {
             padding: 40px 32px;
         }
+        @include mixins.media-down(sm) {
+            padding: 15px;
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @include mixins.media-down(sm) {
+            gap: 10px;
+        }
     }
 
     &__item {
@@ -2190,6 +2220,9 @@
         background-color: #323232;
         overflow: hidden;
         transition: all 0.3s ease;
+        @include mixins.media-down(sm) {
+            border-radius: 14px;
+        }
 
         svg {
             transition: all 0.3s ease;
@@ -2220,6 +2253,9 @@
         list-style: none;
         user-select: none;
         transition: all 0.3s ease;
+        @include mixins.media-down(sm) {
+            padding: 15px;
+        }
 
         &::-webkit-details-marker {
             display: none;
@@ -2248,6 +2284,10 @@
         padding: 0 44px 30px 44px;
         animation: fadeIn 0.3s ease;
 
+        @include mixins.media-down(sm) {
+            padding: 0 15px 15px 15px;
+        }
+
         p {
             font-size: 14px;
             font-weight: 400;
@@ -2258,6 +2298,10 @@
     }
 
     &__callback {
+        @include mixins.media-down(sm) {
+            padding-top: 25px;
+        }
+
         &__title {
             font-size: 24px;
             font-weight: 500;
@@ -2407,6 +2451,10 @@
 .contacts {
     position: relative;
 
+    @include mixins.media-down(sm) {
+        margin-top: 80px;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -2426,6 +2474,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+        @include mixins.media-down(sm) {
+            gap: 10px;
+            grid-template-columns: 1fr;
+        }
     }
 
     &__content {
@@ -2440,6 +2492,9 @@
 
         @include mixins.media-down(lg) {
             padding: 30px 20px;
+        }
+        @include mixins.media-down(sm) {
+            gap: 30px;
         }
     }
 
@@ -2460,12 +2515,18 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
+        @include mixins.media-down(sm) {
+            gap: 20px;
+        }
     }
 
     &__item {
         display: flex;
         align-items: center;
         gap: 20px;
+        @include mixins.media-down(sm) {
+            gap: 12px;
+        }
     }
 
     &__icon {
@@ -2532,6 +2593,10 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        @include mixins.media-down(sm) {
+            height: 360px;
         }
     }
 }
