@@ -254,6 +254,9 @@
         display: grid;
         grid-template-columns: 1fr;
         position: relative;
+        @include mixins.media-down(lg) {
+            gap: 20px;
+        }
     }
 
     &__card {
@@ -727,6 +730,10 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        @include mixins.media-down(lg) {
+            background-size: 560px 560px;
+            background-position: center bottom 30%;
+        }
     }
 
     &__content {
@@ -736,6 +743,10 @@
         gap: 20px;
         justify-content: space-between;
         margin-bottom: 100px;
+        @include mixins.media-down(lg) {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
     }
 
     &__description {
@@ -748,12 +759,20 @@
         max-width: 350px;
         padding-left: 35px;
         color: #BABABA;
+        @include mixins.media-down(lg) {
+            font-size: 14px;
+            max-width: 100%;
+            padding-left: 28px;
+        }
     }
 
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
+        @include mixins.media-down(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__card {
@@ -768,6 +787,9 @@
         background-color: #1E1E1E;
         padding: 24px 24px;
         position: relative;
+        @include mixins.media-down(lg) {
+            padding: 20px;
+        }
 
         &__header {
             display: flex;
@@ -783,6 +805,9 @@
                 color: #fff;
                 text-transform: uppercase;
                 text-wrap: balance;
+                @include mixins.media-down(lg) {
+                    font-size: 14px;
+                }
             }
 
             &__icon {
