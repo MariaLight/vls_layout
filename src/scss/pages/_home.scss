@@ -26,6 +26,8 @@
         span {
             color: variables.$primary-color;
         }
+
+
     }
 
     &__video {
@@ -86,6 +88,16 @@
             }
         }
     }
+
+    @include mixins.media-down(sm) {
+        &__title {
+            font-size: 22px;
+        }
+
+        &__video {
+            height: 520px;
+        }
+    }
 }
 
 // Стили для скрытия шапки при скролле
@@ -115,6 +127,10 @@
         padding-top: 80px;
     }
 
+    @include mixins.media-down(sm) {
+        padding-top: 140px;
+    }
+
     &__header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -125,6 +141,7 @@
             grid-template-columns: 1fr;
             position: relative;
         }
+
     }
 
     &__title {
@@ -151,6 +168,7 @@
             background-color: #fff;
             border: 6px solid rgba(#00985B, 1);
             box-shadow: 0px 0px 10px 5px #FFFFFF1A;
+
         }
 
         span {
@@ -170,6 +188,15 @@
 
             }
         }
+
+        @include mixins.media-down(sm) {
+            font-size: 20px;
+            padding-left: 0;
+
+            &::before {
+                content: none;
+            }
+        }
     }
 
     &__content {
@@ -181,6 +208,10 @@
         @include mixins.media-down(lg) {
             align-items: end;
             padding-left: 28px;
+        }
+
+        @include mixins.media-down(sm) {
+            padding-left: 0;
         }
     }
 
@@ -195,6 +226,10 @@
         @include mixins.media-down(lg) {
             font-size: 14px;
             font-weight: 300;
+        }
+
+        @include mixins.media-down(sm) {
+            font-size: 12px;
         }
     }
 
@@ -218,6 +253,15 @@
             right: 0;
             padding: 11px 50px;
         }
+
+        @include mixins.media-down(sm) {
+            font-size: 10px;
+            padding: 7px 20px;
+            right: auto;
+            left: 0;
+            top: -45px;
+
+        }
     }
 
     &__titles {
@@ -230,6 +274,10 @@
 
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr 2fr;
+        }
+
+        @include mixins.media-down(sm) {
+            display: none;
         }
 
         &__title {
@@ -259,6 +307,11 @@
         @include mixins.media-down(lg) {
             gap: 20px;
         }
+
+        @include mixins.media-down(sm) {
+            gap: 40px;
+            margin-top: -60px;
+        }
     }
 
     &__card {
@@ -272,6 +325,12 @@
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr 2fr;
             position: static;
+        }
+
+        @include mixins.media-down(sm) {
+            position: relative;
+            gap: 30px;
+            grid-template-columns: 1fr;
         }
 
 
@@ -289,6 +348,24 @@
         }
 
         &__left {
+            @include mixins.media-down(sm) {
+                &::before {
+                    content: 'Боль';
+                    font-size: 12px;
+                    line-height: 1.3;
+                    font-weight: 400;
+                    color: #bababa;
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+
+                }
+                min-height: 200px;
+                padding-right: 60px;
+                display: flex;
+                flex-direction: column;
+            }
+
             &__header {
                 display: flex;
                 align-items: start;
@@ -307,6 +384,10 @@
                 @include mixins.media-down(lg) {
                     font-size: 14px;
                 }
+
+                @include mixins.media-down(sm) {
+                    font-size: 16px;
+                }
             }
 
             &__icon {
@@ -321,6 +402,10 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+
+                @include mixins.media-down(sm) {
+                    display: none;
                 }
             }
 
@@ -337,6 +422,13 @@
                     height: 100%;
                     object-fit: contain;
                 }
+
+                @include mixins.media-down(sm) {
+                    height: 100px;
+                    position: absolute;
+                    right: -120px;
+                    top: 50px;
+                }
             }
 
             &__text {
@@ -349,6 +441,10 @@
                 text-transform: uppercase;
                 margin-top: 10px;
                 padding-right: 20px;
+
+                @include mixins.media-down(sm) {
+                   margin-top: auto;
+                }
 
             }
         }
@@ -373,6 +469,24 @@
 
             }
 
+            @include mixins.media-down(sm) {
+                background-image: url(../img/icons/problems-pattern-mobile.svg);
+                background-size: 98px 56px;
+                background-position: right -7px top 16px;
+
+                &::before {
+                    content: 'Решение';
+                    font-size: 12px;
+                    line-height: 1.3;
+                    font-weight: 400;
+                    color: #bababa;
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+
+                }
+            }
+
             &::after {
                 content: '0' counter(problems-card);
                 position: absolute;
@@ -391,6 +505,10 @@
                     right: 10px;
                 }
 
+                @include mixins.media-down(sm) {
+                    font-size: 36px;
+                }
+
             }
 
             &__title {
@@ -406,6 +524,9 @@
                     font-size: 18px;
                     padding-right: 30px;
                 }
+                @include mixins.media-down(sm) {
+                    font-size: 16px;
+                }
 
             }
 
@@ -419,6 +540,9 @@
                     font-size: 14px;
                 }
 
+                @include mixins.media-down(sm) {
+                    font-size: 12px;
+                }
 
                 ul {
                     list-style: none;
@@ -2151,6 +2275,7 @@
         line-height: 1.3;
         color: #fff;
         text-transform: uppercase;
+
         @include mixins.media-down(lg) {
             font-size: 14px;
         }
@@ -2188,6 +2313,7 @@
         line-height: 1.4;
         color: #bababa;
         text-wrap: balance;
+
         @include mixins.media-down(lg) {
             font-size: 14px;
         }
