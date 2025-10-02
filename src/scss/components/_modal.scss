@@ -23,10 +23,12 @@
     visibility: hidden;
     transition: opacity .2s, visibility .2s;
     overflow-y: scroll;
+    z-index: -1;
 
     &_active {
         opacity: 1;
-        visibility: visible
+        visibility: visible;
+        z-index: 999;
     }
 
     &__inner {

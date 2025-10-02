@@ -4,6 +4,7 @@ import { initTabs, initLoadingTabs, initTeamTabs } from './components/tabs.js';
 import { initAnimations } from './components/animations.js';
 import { initServicesSlider } from './components/slider.js';
 import { initModals } from './components/modal.js';
+import { initMobileMenu } from './components/mobile-menu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initVideoAnimation();
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initServicesSlider();
     initModals();
+    initMobileMenu();
 });
 
 
