@@ -5,9 +5,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 function initServicesSlider() {
+    // Проверяем размер экрана - инициализируем свайпер только для десктопа
+    const isDesktop = window.innerWidth >= 1200; // xl брейкпоинт
+    
+    if (!isDesktop) {
+        // На планшетах и мобильных просто показываем карточки без свайпера
+        return;
+    }
+
     const servicesSwiper = new Swiper('.services__swiper', {
         modules: [Navigation, Pagination],
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 20,
         speed: 800,
         pagination: {
@@ -17,20 +25,6 @@ function initServicesSlider() {
         navigation: {
             nextEl: '.services__swiper-button-next',
             prevEl: '.services__swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 16,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 16,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
         },
     });
 }
