@@ -898,6 +898,10 @@
 
 .about {
     position: relative;
+    @include mixins.media-down(sm) {
+        margin-top: 80px;
+        
+    }
 
     &::before {
         content: '';
@@ -914,6 +918,14 @@
         z-index: -1;
     }
 
+    @include mixins.media-down(sm) {
+        .container {
+            max-width: 100%;
+            padding: 0;
+
+        }
+    }
+
     &__inner {
         padding: 45px 0 136px;
         background-image: url(../img/base/planet.png);
@@ -925,6 +937,14 @@
             background-size: 560px 560px;
             background-position: center bottom 30%;
         }
+        @include mixins.media-down(sm) {
+            background-size: 1078px 1078px;
+            background-position: left bottom ;
+
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
     }
 
     &__content {
@@ -938,6 +958,17 @@
         @include mixins.media-down(lg) {
             margin-top: 40px;
             margin-bottom: 60px;
+        }
+        @include mixins.media-down(sm) {
+            margin-top: -20px;
+            margin-bottom: 50px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 40px;
+
+            .btn-main {
+                justify-content: center;
+            }
         }
     }
 
@@ -957,6 +988,10 @@
             max-width: 100%;
             padding-left: 28px;
         }
+        @include mixins.media-down(sm) {
+            padding-left: 0;
+            font-size: 12px;
+        }
     }
 
     &__cards {
@@ -966,6 +1001,10 @@
 
         @include mixins.media-down(lg) {
             grid-template-columns: repeat(2, 1fr);
+        }
+        @include mixins.media-down(sm) {
+            grid-template-columns: 1fr;
+            padding-right: 40px;
         }
     }
 
