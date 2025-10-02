@@ -1859,6 +1859,9 @@ background-position: bottom 100px center;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+        @include mixins.media-down(lg) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__block {
@@ -1866,6 +1869,9 @@ background-position: bottom 100px center;
         border: 1px solid #2F2F2F;
         border-radius: 26px;
         background-color: #1E1E1E;
+        @include mixins.media-down(lg) {
+            padding: 40px 32px;
+        }
     }
 
     &__list {
@@ -1955,6 +1961,7 @@ background-position: bottom 100px center;
             color: #fff;
             text-transform: uppercase;
             margin-bottom: 24px;
+            
         }
 
         &__text {
@@ -1964,6 +1971,9 @@ background-position: bottom 100px center;
             line-height: 1.25;
             color: #fff;
             margin-bottom: 56px;
+            @include mixins.media-down(lg) {
+                margin-bottom: 40px;
+            }
         }
 
         &__form {
