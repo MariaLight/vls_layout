@@ -81,5 +81,29 @@ function initLoadingTabs() {
     });
 }
 
-export { initTabs, initLoadingTabs };
+function initTeamTabs() {
+    const teamTabs = document.querySelectorAll('.team__tab-main');
+    const teamContents = document.querySelectorAll('.team__content-main');
+
+    if (!teamTabs.length || !teamContents.length) {
+        return;
+    }
+
+    teamTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabName = tab.dataset.tab;
+
+            teamTabs.forEach(t => t.classList.remove('active'));
+            teamContents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            const activeContent = document.querySelector(`[data-content="${tabName}"]`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+        });
+    });
+}
+
+export { initTabs, initLoadingTabs, initTeamTabs };
 
