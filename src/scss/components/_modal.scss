@@ -121,6 +121,14 @@
             font-size: 14px;
         }
 
+        @include mixins.media-down(sm) {
+            padding: 30px 15px;
+            font-size: 14px;
+            ol {
+                padding-left: 10px;
+            }
+        }
+
         span {
             color: #00A652;
 
