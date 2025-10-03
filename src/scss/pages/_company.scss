@@ -331,6 +331,20 @@
         z-index: -1;
         display: block;
     }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        right: -20%;
+        width: 1000px;
+        height: 1000px;
+        background-image: url(../img/base/bg/values-bg.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        display: block;
+    }
     &__header {
         display: flex;
         align-items: center;
@@ -559,4 +573,88 @@
             }
         }
     }
+}
+
+.more {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: 20%;
+        width: 1215px;
+        height: 1811px;
+        background-image: url(../img/base/bg/more-bg.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        display: block;
+    }
+    &__inner {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 100px;
+    }
+
+    &__block {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 20px;
+        height: 451px;
+
+        &__img {
+            width: 100%;height: 100%;
+            overflow: hidden;
+            border-radius: 30px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .card__header {
+        align-items: start;
+    }
+    .value__card__title {
+        font-family: variables.$font-family-headings;
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: variables.$text-color;
+        text-transform: uppercase;
+        text-wrap: balance;
+        span {
+            color: variables.$primary-color;
+        }
+    }
+
+    .card__text {
+        font-size: 16px;
+        line-height: 1.4;
+        p:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .card__subtext {
+        font-size: 16px;
+        line-height: 1.3;
+        text-transform: uppercase;
+        color: #d9d9d9;
+        font-weight: 400;
+        margin-top: auto;
+    }
+
+    .value__card__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        height: 100%;
+    }
+
 }

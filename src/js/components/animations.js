@@ -8,12 +8,12 @@ function addAnimationClasses() {
     });
 
     // Карточки problems
-    const problemCards = document.querySelectorAll('.problems__card');
-    problemCards.forEach((card, index) => {
-        card.classList.add('wow', 'animate__fadeInUp');
-        card.setAttribute('data-wow-duration', '0.8s');
-        card.setAttribute('data-wow-delay', `${index * 0.15}s`);
-    });
+    // const problemCards = document.querySelectorAll('.problems__card');
+    // problemCards.forEach((card, index) => {
+    //     card.classList.add('wow', 'animate__fadeInUp');
+    //     card.setAttribute('data-wow-duration', '0.8s');
+    //     card.setAttribute('data-wow-delay', `${index * 0.15}s`);
+    // });
 
     // Табы тарифов
     const tariffsTabsMain = document.querySelector('.tariffs__tabs-main');
@@ -25,7 +25,7 @@ function addAnimationClasses() {
 
     const tariffsContent = document.querySelector('.tariffs__content');
     if (tariffsContent) {
-        tariffsContent.classList.add('wow', 'animate__fadeInUp');
+        tariffsContent.classList.add('wow', 'animate__slideInUp');
         tariffsContent.setAttribute('data-wow-duration', '0.8s');
         tariffsContent.setAttribute('data-wow-delay', '0.3s');
     }
@@ -41,7 +41,7 @@ function addAnimationClasses() {
     // FAQ блоки
     const faqBlocks = document.querySelectorAll('.faq__block');
     faqBlocks.forEach((block, index) => {
-        block.classList.add('wow', 'animate__fadeInUp');
+        block.classList.add('wow', 'animate__slideInUp');
         block.setAttribute('data-wow-duration', '0.8s');
         block.setAttribute('data-wow-delay', `${index * 0.2}s`);
     });
@@ -49,7 +49,7 @@ function addAnimationClasses() {
     // Контакты
     const contactsInner = document.querySelector('.contacts__inner');
     if (contactsInner) {
-        contactsInner.classList.add('wow', 'animate__fadeInUp');
+        contactsInner.classList.add('wow', 'animate__slideInUp');
         contactsInner.setAttribute('data-wow-duration', '1s');
         contactsInner.setAttribute('data-wow-delay', '0.2s');
     }
