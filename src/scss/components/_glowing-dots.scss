@@ -1,0 +1,33 @@
+@use "../variables";
+@use "../mixins";
+
+.glowing-dots {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+
+    &.horizontal {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+   &__item {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    display: block;
+    background-color: #151515;
+    transition: variables.$transition-base;
+    &.active {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+        background-color: #fff;
+        border: 4px solid #00462a;
+        box-shadow: 0px 0px 10px 5px #FFFFFF1A;
+
+    }
+   }
+}
