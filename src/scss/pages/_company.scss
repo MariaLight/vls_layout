@@ -313,6 +313,10 @@
     position: relative;
     margin-top: 130px;
 
+    @include mixins.media-down(sm) {
+        margin-top: 80px;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -348,6 +352,25 @@
 
             .block__tag{
                 order: 1;
+            }
+        }
+        @include mixins.media-down(sm) {
+            margin-bottom: 40px;
+            flex-direction: column;
+            align-items: start;
+            gap: 15px;
+            .block__title {
+                order: 1;
+                margin-bottom: 5px;
+            }
+
+            .block__text {
+                order: 2;
+                width: 100%;
+            }
+
+            .block__tag{
+                order: 0;
             }
         }
     }

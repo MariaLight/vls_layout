@@ -119,6 +119,9 @@
         color: variables.$text-color;
         max-width: 500px;
         text-wrap: balance;
+        @include mixins.media-down(sm) {
+            font-size: 12px;
+        }
     }
 
     
@@ -183,5 +186,8 @@
         font-size: 14px;
         color: #BABABA;
         text-wrap: balance;
+        @include mixins.media-down(sm) {
+            font-size: 12px;
+        }
     }
 }
