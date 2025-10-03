@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
+        company: resolve(__dirname, 'src/company.html'),
         },
       output: {
         entryFileNames: 'js/[name]-[hash].js',
