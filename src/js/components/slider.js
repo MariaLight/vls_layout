@@ -29,5 +29,42 @@ function initServicesSlider() {
     });
 }
 
-export { initServicesSlider };
+function initValuesSlider() {
+    // Проверяем размер экрана - инициализируем свайпер только для мобильных
+    const isMobile = window.innerWidth < 576; // sm брейкпоинт
+    const navigationElement = document.querySelector('.values__navigation');
+    
+    if (!isMobile) {
+        if (navigationElement) {
+            navigationElement.style.display = 'none';
+        }
+        return;
+    }
+
+    if (navigationElement) {
+        navigationElement.style.display = 'flex';
+    }
+
+    const valuesSwiper = new Swiper('.values__inner', {
+        modules: [Pagination],
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+        speed: 300,
+        freeMode: true,
+        grabCursor: true,
+        pagination: {
+            el: '.values__swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 'auto',
+                spaceBetween: 15,
+            }
+        }
+    });
+}
+
+export { initServicesSlider, initValuesSlider };
 

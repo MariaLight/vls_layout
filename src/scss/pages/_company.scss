@@ -386,6 +386,28 @@
             grid-template-rows: auto;
             gap: 20px 12px;
         }
+
+        @include mixins.media-down(sm) {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #00985B transparent;
+
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #00985B;
+                border-radius: 2px;
+            }
+        }
     }
 
     &__block {
@@ -471,10 +493,30 @@
                 grid-area: 4 / 2 / 5 / 3;
             }
         }
+
+        @include mixins.media-down(sm) {
+            &:nth-child(3),
+            &:nth-child(5),
+            &:nth-child(9) {
+                display: none;
+            }
+
+            flex: 0 0 280px;
+            min-width: 280px;
+        }
     }
 
     &__card {
         height: 100%;
+
+        @include mixins.media-down(sm) {
+            height: auto;
+            min-height: 200px;
+
+            .glowing-dots {
+                display: none;
+            }
+        }
     }
 
     &__img {
@@ -488,6 +530,33 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+
+        @include mixins.media-up(sm) {
+            display: none !important;
+        }
+    }
+
+    &__swiper-pagination {
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background-color: #5E5E5E;
+            opacity: 1;
+            margin: 0 4px;
+            transition: all 0.3s ease;
+
+            &.swiper-pagination-bullet-active {
+                background-color: #00985B;
+                transform: scale(1.2);
+            }
         }
     }
 }
