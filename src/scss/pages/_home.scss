@@ -432,7 +432,22 @@
                     top: 50px;
                 }
             }
+            &__content {
+                display: flex;
+                align-items: end;
+                gap: 10px;
 
+                @include mixins.media-down(sm) {
+                    flex-direction: column;
+                    margin-top: auto;
+
+                    .glowing-dots {
+                        justify-content: center;
+                        flex-direction: row;
+                        margin: 0 auto;
+                    }
+                }
+            }
             &__text {
                 font-size: 12px;
                 font-weight: 500;
@@ -442,11 +457,6 @@
                 text-wrap: balance;
                 text-transform: uppercase;
                 margin-top: 10px;
-                padding-right: 20px;
-
-                @include mixins.media-down(sm) {
-                    margin-top: auto;
-                }
 
             }
         }
