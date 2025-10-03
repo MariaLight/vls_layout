@@ -179,6 +179,6 @@ textarea {
     padding: 75px 0;
 
     @include mixins.media-down(lg) {
-        padding: 20px 0;
+        padding: 40px 0;
     }
 }

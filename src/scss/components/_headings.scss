@@ -116,7 +116,7 @@
         font-weight: 400;
         font-family: variables.$font-family-primary;
         line-height: 1.4;
-        color: variables.$text-color;
+        color: #BABABA;
         max-width: 500px;
         text-wrap: balance;
         @include mixins.media-down(sm) {
