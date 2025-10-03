@@ -5,6 +5,7 @@ import { initAnimations } from './components/animations.js';
 import { initServicesSlider, initValuesSlider } from './components/slider.js';
 import { initModals } from './components/modal.js';
 import { initMobileMenu } from './components/mobile-menu.js';
+import './components/news-swiper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initVideoAnimation();

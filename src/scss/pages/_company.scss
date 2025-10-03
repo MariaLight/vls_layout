@@ -784,8 +784,9 @@
             align-items: start;
             gap: 40px;
         }
-        
+
     }
+
     @include mixins.media-down(sm) {
         .block__header {
             gap: 20px;
@@ -795,6 +796,7 @@
 
     &__text {
         max-width: 50%;
+
         @include mixins.media-down(lg) {
             max-width: 100%;
         }
@@ -807,6 +809,7 @@
         margin-top: 70px;
         overflow: hidden;
         contain: layout style paint;
+
         @include mixins.media-down(lg) {
             margin-top: 30px;
         }
@@ -935,5 +938,259 @@
     .block__text {
         margin-right: 33px;
         margin-left: auto;
+    }
+
+    .btn-main {
+        min-width: 335px;
+    }
+
+    .work__title__mobile {
+        display: none;
+    }
+
+    @include mixins.media-down(lg) {
+        .block__header .block__title {
+            display: none;
+        }
+
+        .block__text {
+            margin-left: 0;
+        }
+
+        .work__title__mobile {
+            display: block;
+            margin-bottom: 40px;
+
+        }
+        &__img {
+            border-radius:26px;
+        }
+    }
+    @include mixins.media-down(sm) {
+        &__img {
+            border-radius: 15px;
+            margin-bottom: 20px;
+            img {
+                object-position: top;
+                object-fit: cover;
+            }
+        }
+
+        .block__header {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+.news {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -40%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background-image: url(../img/base/bg/news-bg.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        display: block;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        right: 10%;
+        width: 600px;
+        height: 600px;
+        background-image: url(../img/base/bg/values-bg.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        display: block;
+    }
+
+    &__inner {
+        margin-top: 50px;
+
+    }
+
+    &__card {
+        background-color: #1e1e1e;
+        border: 1px solid #2f2f2f;
+        border-radius: 30px;
+        padding: 20px 20px 40px;
+        position: relative;
+        height: 100%;
+
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        z-index: 2;
+
+        &:hover~.news__image img {
+            transform: scale(1.05);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 30px;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: #fff;
+        text-transform: uppercase;
+        text-wrap: balance;
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 40px;
+
+    }
+
+    &__navigation-buttons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    &__swiper-wrapper {
+        align-items: stretch;
+    }
+
+    &__swiper-slide {
+        height: auto !important;
+    }
+
+    &__swiper-pagination {
+        position: static !important;
+        width: 100%;
+        height: 1px !important;
+        background-color: #8A8A8A !important;
+        border-radius: 2px;
+
+
+        .swiper-pagination-progressbar-fill {
+            background-color: #00A652 !important;
+            border-radius: 2px;
+        }
+    }
+
+    &__swiper-button-next,
+    &__swiper-button-prev {
+        position: static !important;
+        width: 48px;
+        height: 48px;
+        background-color: #00A652;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: block;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='13' viewBox='0 0 15 13' fill='none'%3E%3Cpath d='M0.311152 6.68885H13.6888M13.6888 6.68885L8.11481 1.11481M13.6888 6.68885L8.33777 12.0399' stroke='white'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        svg {
+            display: none;
+
+        }
+
+        &:hover {
+            background-color: #008542;
+            transform: scale(1.05);
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    &__swiper-button-prev {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    @include mixins.media-down(lg) {
+        .block__header {
+            flex-direction: column;
+            align-items: start;
+            gap: 40px;
+        }
+
+        &__inner {
+            margin-top: 40px;
+        }
+
+        &__card {
+            padding: 5px 5px 60px;
+            border-radius: 15px;
+        }
+
+        &__image {
+            border-radius: 15px;
+            height: 237px;
+        }
+
+        &__title {
+            font-size: 16px;
+            padding: 0 15px;
+        }
+    }
+    @include mixins.media-down(sm) {
+        .block__header {
+            gap: 20px;
+        }
+
+
+        &__image {
+            height: 222px;
+        }
     }
 }
