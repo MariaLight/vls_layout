@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         gap: 23px;
-        padding: 7px;
+        padding: 16px;
         border-radius: 40px;
         background-color: variables.$accent-color-2;
         transition: variables.$transition-base;
@@ -22,6 +22,8 @@
         line-height: 1.4;
         text-align: center;
         text-transform: uppercase;
+        position: relative;
+        justify-content: center;
 
         span {
             color: variables.$text-color;
@@ -37,6 +39,9 @@
             height: 36px;
             object-fit: contain;
             flex-shrink: 0;
+            position: absolute;
+            left: 7px;
+            top: 7px;
         }
 
         // &:disabled {
