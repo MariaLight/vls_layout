@@ -40,6 +40,15 @@
             align-items: flex-start;
             gap: 15px;
         }
+
+        .btn-main {
+            margin-left: auto;
+
+            @include mixins.media-down(sm) {
+                margin-left: 0;
+                order: 2;
+            }
+        }
     }
 
     &__title {
@@ -80,6 +89,7 @@
             padding-left: 28px;
             order: 0;
             width: auto;
+            max-width: 70%;
 
             &::before {
                 width: 18px;
@@ -95,6 +105,7 @@
             padding-left: 0;
             padding-right: 0;
             order: 1;
+            max-width: 100%;
 
             &::before {
                 content: none;
@@ -115,6 +126,7 @@
         text-align: center;
         text-wrap: nowrap;
         margin-left: auto;
+        width: fit-content;
         @include mixins.media-down(lg) {
             
             order: 1;
