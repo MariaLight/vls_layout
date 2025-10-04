@@ -311,7 +311,7 @@
 
         @include mixins.media-down(sm) {
             gap: 40px;
-            margin-top: -60px;
+            margin-top: 0;
         }
     }
 
@@ -332,6 +332,7 @@
             position: relative;
             gap: 30px;
             grid-template-columns: 1fr;
+            top: 0;
         }
 
 
@@ -459,6 +460,9 @@
                 text-wrap: balance;
                 text-transform: uppercase;
                 margin-top: 10px;
+                @include mixins.media-down(sm) {
+                   padding-right: 40px;
+                }
 
             }
         }
@@ -541,6 +545,7 @@
 
                 @include mixins.media-down(sm) {
                     font-size: 16px;
+                    padding-right: 55px;
                 }
 
             }
@@ -593,6 +598,10 @@
 .problems .problems__header {
     position: sticky;
     top: 70px;
+
+    @include mixins.media-down(sm) {
+        position: static;
+    }
 }
 
 .tariffs {
@@ -969,7 +978,7 @@
     position: relative;
 
     @include mixins.media-down(sm) {
-        margin-top: 80px;
+        margin-top: 0;
 
     }
 
@@ -1010,10 +1019,11 @@
 
         @include mixins.media-down(sm) {
             background-size: 1078px 1078px;
-            background-position: left bottom;
+            background-position: left bottom -80%;
 
             padding-left: 20px;
             padding-right: 20px;
+            padding-bottom: 0;
         }
 
     }
@@ -1190,7 +1200,7 @@
 
 .loading {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     &::before {
         content: '';
@@ -1943,6 +1953,11 @@
         background-position: center right;
         background-repeat: no-repeat;
         z-index: -1;
+
+        @include mixins.media-down(sm) {
+          content: none;
+
+        }
     }
 
     &__video {
