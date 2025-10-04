@@ -5,7 +5,7 @@
     margin-bottom: 130px;
 
     @include mixins.media-down(sm) {
-        margin-bottom: 80px;
+        margin-bottom: 0;
     }
 
     &__inner {
@@ -314,7 +314,7 @@
     margin-top: 130px;
 
     @include mixins.media-down(sm) {
-        margin-top: 80px;
+        margin-top: 0;
     }
 
     &::before {
@@ -352,6 +352,13 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 60px;
+        .block__title {
+            width: auto;
+        }
+
+        .block__tag {
+            margin-left: 0;
+        }
 
         @include mixins.media-down(lg) {
             margin-bottom: 30px;
@@ -935,10 +942,10 @@
         }
     }
 
-    .block__text {
-        margin-right: 33px;
-        margin-left: auto;
-    }
+    // .block__text {
+    //     margin-right: 33px;
+    //     margin-left: auto;
+    // }
 
     .btn-main {
         min-width: 335px;
@@ -952,9 +959,14 @@
         .block__header .block__title {
             display: none;
         }
+        .work .block__header {
+            flex-direction: row;
+        }
 
         .block__text {
             margin-left: 0;
+            width: auto;
+            order: 1;
         }
 
         .work__title__mobile {
@@ -962,14 +974,20 @@
             margin-bottom: 40px;
 
         }
+
         &__img {
-            border-radius:26px;
+            border-radius: 26px;
+        }
+        .work__btn  {
+            order: 2;
         }
     }
+
     @include mixins.media-down(sm) {
         &__img {
             border-radius: 15px;
             margin-bottom: 20px;
+
             img {
                 object-position: top;
                 object-fit: cover;
@@ -1183,6 +1201,7 @@
             padding: 0 15px;
         }
     }
+
     @include mixins.media-down(sm) {
         .block__header {
             gap: 20px;
@@ -1196,6 +1215,21 @@
 }
 
 .docs {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: 10%;
+        width: 600px;
+        height: 600px;
+        background-image: url(../img/base/bg/news-bg.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        display: block;
+    }
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -1206,12 +1240,14 @@
             grid-template-columns: repeat(2, 1fr);
             margin-top: 30px;
         }
+
         @include mixins.media-down(sm) {
             gap: 10px;
             margin-top: 40px;
         }
 
     }
+
     &__card {
         background-color: #1e1e1e;
         border: 1px solid #2f2f2f;
@@ -1222,10 +1258,12 @@
         padding: 70px 30px 60px;
         gap: 40px;
         position: relative;
+
         @include mixins.media-down(lg) {
             padding-left: 40px;
             padding-right: 40px;
         }
+
         @include mixins.media-down(sm) {
             padding-left: 10px;
             padding-right: 10px;
@@ -1276,6 +1314,7 @@
             text-transform: uppercase;
             text-align: center;
             transition: all 0.3s ease;
+
             // text-wrap: balance;
             @include mixins.media-down(sm) {
                 font-size: 10px;
@@ -1284,4 +1323,73 @@
     }
 
 
+}
+
+.cta-2 {
+    .block__text {
+        max-width: 305px;
+        @include mixins.media-down(lg) {
+            max-width: 100%;
+
+        }
+    }
+
+    .block__title {
+        @include mixins.media-down(lg) {
+            font-size: 38px;
+            &::before {
+                width: 22px;
+                height: 22px;
+                margin-top: 5px;
+
+            }
+        }
+        @include mixins.media-down(sm) {
+            font-size: 20px;
+        }
+    }
+
+    &__form {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 67px;
+        background-color: #1e1e1e;
+        border: 1px solid #2f2f2f;
+        border-radius: 26px;
+        padding: 60px 45px;
+
+        .cta__form-row {
+            flex-direction: column;
+        }
+        @include mixins.media-down(lg) {
+            grid-template-columns: 1fr;
+            padding: 40px 30px;
+
+
+            &__right {
+                display: none;
+            }
+            .cta__form-row {
+                flex-direction: row;
+            }
+            
+        }
+        @include mixins.media-down(sm) {
+            padding: 25px 20px;
+            margin-top: 40px;
+        }
+
+        &__left {
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq__callback__textarea {
+            min-height: 276px;
+        }
+
+
+    }
 }
