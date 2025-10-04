@@ -101,6 +101,7 @@ function initTeamTabs() {
             if (activeContent) {
                 activeContent.classList.add('active');
                 initTeamSubTabs(activeContent);
+                initTeamAccordions(); // Инициализируем аккордеоны для новой вкладки
             }
         });
     });
@@ -109,6 +110,7 @@ function initTeamTabs() {
     const activeContent = document.querySelector('.team__content-main.active');
     if (activeContent) {
         initTeamSubTabs(activeContent);
+        initTeamAccordions(); // Инициализируем аккордеоны для активного контента
     }
 }
 
@@ -136,5 +138,61 @@ function initTeamSubTabs(container) {
     });
 }
 
-export { initTabs, initLoadingTabs, initTeamTabs };
+function initTeamAccordions() {
+    console.log('Инициализация аккордеонов...');
+    
+    // Находим все заголовки аккордеонов
+    const accordionHeaders = document.querySelectorAll('.team__accordion-header');
+    
+    if (!accordionHeaders.length) {
+        console.log('Аккордеоны не найдены');
+        return;
+    }
+
+    console.log('Найдено аккордеонов:', accordionHeaders.length);
+
+    // Удаляем все предыдущие обработчики
+    accordionHeaders.forEach(header => {
+        const newHeader = header.cloneNode(true);
+        header.parentNode.replaceChild(newHeader, header);
+    });
+
+    // Добавляем новые обработчики
+    const newHeaders = document.querySelectorAll('.team__accordion-header');
+    newHeaders.forEach(header => {
+        header.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Клик по аккордеону');
+            
+            const accordionId = this.dataset.accordion;
+            const content = document.querySelector(`[data-accordion-content="${accordionId}"]`);
+            
+            if (!content) {
+                console.log('Контент не найден');
+                return;
+            }
+
+            // Закрываем все другие аккордеоны
+            newHeaders.forEach(otherHeader => {
+                if (otherHeader !== this) {
+                    otherHeader.classList.remove('active');
+                    const otherContent = document.querySelector(`[data-accordion-content="${otherHeader.dataset.accordion}"]`);
+                    if (otherContent) {
+                        otherContent.classList.remove('active');
+                    }
+                }
+            });
+
+            // Переключаем текущий аккордеон
+            this.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            console.log('Аккордеон переключен:', this.classList.contains('active'));
+        });
+    });
+}
+
+export { initTabs, initLoadingTabs, initTeamTabs, initTeamAccordions };
 
