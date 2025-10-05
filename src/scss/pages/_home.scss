@@ -589,7 +589,7 @@ padding-top: 60px;
     }
 }
 
-.problems .problems__header {
+.problems .block__header {
     position: sticky;
     top: 70px;
 
@@ -600,6 +600,7 @@ padding-top: 60px;
 
 .tariffs {
     position: relative;
+    overflow: visible;
 
     .problems__content .btn-main {
 
@@ -617,7 +618,7 @@ padding-top: 60px;
         height: 677px;
         display: block;
         background-image: url(../img/base/bg/auto-bg.svg);
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         z-index: -1;
