@@ -6,7 +6,7 @@ import { initServicesSlider, initValuesSlider } from './components/slider.js';
 import { initModals } from './components/modal.js';
 import { initMobileMenu } from './components/mobile-menu.js';
 import './components/news-swiper.js';
-
+import './components/faq.js';
 document.addEventListener('DOMContentLoaded', () => {
     initVideoAnimation();
     initTabs();

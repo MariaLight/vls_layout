@@ -39,6 +39,7 @@ html {
         flex-direction: column;
     }
 }
+
 @media (min-width:320px) {
     .page {
         font-size: calc(100vw / 380 * 10);
@@ -52,12 +53,14 @@ html {
         font-size: calc(100vw / 768 * 10);
     }
 }
+
 @media (min-width:variables.$breakpoint-lg) {
     .page {
         overflow-x: visible;
         font-size: calc(100vw / 1440 * 10);
     }
 }
+
 .main {
     position: relative;
     z-index: 2;
@@ -181,6 +184,7 @@ textarea {
         padding: 0 2rem;
     }
 }
+
 @include mixins.media-down(md) {
     .container {
         padding: 0 2rem;
