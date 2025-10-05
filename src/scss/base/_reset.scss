@@ -63,14 +63,14 @@ html {
     z-index: 2;
     width: 100%;
     flex: 1 0 auto;
-    padding: 20px 0 150px;
+    padding: 2rem 0 15rem;
 
     @include mixins.media-down(lg) {
         overflow: hidden;
     }
 
     @include mixins.media-down(lg) {
-        padding: 20px 0 80px;
+        padding: 2rem 0 8rem;
     }
 }
 
@@ -178,12 +178,12 @@ textarea {
 
 @include mixins.media-down(xl) {
     .container {
-        padding: 0 20px;
+        padding: 0 2rem;
     }
 }
 @include mixins.media-down(md) {
     .container {
-        padding: 0 20px;
+        padding: 0 2rem;
     }
 }
 
@@ -192,9 +192,9 @@ textarea {
 }
 
 .section {
-    padding: 75px 0;
+    padding: 7.5rem 0;
 
     @include mixins.media-down(lg) {
-        padding: 40px 0;
+        padding: 4rem 0;
     }
 }

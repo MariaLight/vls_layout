@@ -7,18 +7,18 @@
 
 .title {
     font-family: variables.$font-family-primary;
-    font-size: 48px;
+    font-size: 4.8rem;
     font-weight: variables.$font-weight-bold;
     line-height: variables.$line-height-base;
     color: variables.$text-color;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 @include mixins.media-down(lg) {
     .title {
-        font-size: 26px;
-        margin-bottom: 30px;
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
     }
 }
 
@@ -26,19 +26,19 @@
     &__header {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
         // justify-content: space-between;
 
         @include mixins.media-down(lg) {
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 4rem;
         }
 
         @include mixins.media-down(sm) {
             flex-direction: column;
             align-items: flex-start;
-            gap: 15px;
+            gap: 1.5rem;
         }
 
         .btn-main {
@@ -52,7 +52,7 @@
     }
 
     &__title {
-        font-size: 38px;
+        font-size: 3.8rem;
         font-weight: 500;
         font-family: variables.$font-family-headings;
         line-height: 1.24;
@@ -60,23 +60,23 @@
         text-transform: uppercase;
         text-wrap: balance;
         letter-spacing: 0.02em;
-        padding-left: 35px;
+        padding-left: 3.5rem;
         position: relative;
-        width: calc(50% + 20px);
+        width: calc(50% + 2rem);
         flex-shrink: 0;
 
         &::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 14px;
+            top: 1.4rem;
             display: block;
-            width: 22px;
-            height: 22px;
+            width: 2.2rem;
+            height: 2.2rem;
             border-radius: 50%;
             background-color: #fff;
-            border: 6px solid #00462a;
-            box-shadow: 0px 0px 10px 5px #FFFFFF1A;
+            border: 0.6rem solid #00462a;
+            box-shadow: 0 0 1rem 0.5rem #FFFFFF1A;
 
         }
 
@@ -85,23 +85,23 @@
         }
 
         @include mixins.media-down(lg) {
-            font-size: 26px;
-            padding-left: 28px;
+            font-size: 2.6rem;
+            padding-left: 2.8rem;
             order: 0;
             width: auto;
             max-width: 70%;
 
             &::before {
-                width: 18px;
-                height: 18px;
-                top: 8px;
-                border: 5px solid #00462a;
+                    width: 1.8rem;
+                height: 1.8rem;
+                top: 0.8rem;
+                border: 0.5rem solid #00462a;
 
             }
         }
 
         @include mixins.media-down(sm) {
-            font-size: 20px;
+            font-size: 2rem;
             padding-left: 0;
             padding-right: 0;
             order: 1;
@@ -114,13 +114,13 @@
     }
 
     &__tag {
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 400;
         font-family: variables.$font-family-primary;
         line-height: 1.25;
         color: variables.$primary-color;
-        padding: 10px 50px;
-        border-radius: 24px;
+        padding: 1rem 5rem;
+        border-radius: 2.4rem;
         background-color: #1E1E1E;
         color: #00A652;
         text-align: center;
@@ -133,20 +133,20 @@
         }
 
         @include mixins.media-down(sm) {
-            font-size: 10px;
-            padding: 7px 25px;
+            font-size: 1rem;
+            padding: 0.7rem 2.5rem;
             order: 0;
             margin-left: 0;
         }
     }
 
     &__text {
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
         font-family: variables.$font-family-primary;
         line-height: 1.4;
         color: #BABABA;
-        max-width: 500px;
+        max-width: 50rem;
         text-wrap: balance;
         @include mixins.media-down(lg) {
             width: 100%;
@@ -154,7 +154,7 @@
             max-width: 100%;
         }
         @include mixins.media-down(sm) {
-            font-size: 12px;
+            font-size: 1.2rem;
             order: 2;
         }
     }
@@ -163,29 +163,29 @@
 }
 
 .card {
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid #2f2f2f;
+    padding: 3rem;
+    border-radius: 2rem;
+    border: .1rem solid #2f2f2f;
     background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
 
     @include mixins.media-down(lg) {
-        padding: 20px;
-        gap: 40px;
-        border-radius: 30px;
+        padding: 2rem;
+        gap: 4rem;
+        border-radius: 3rem;
     }
 
     &__header {
         display: flex;
-        gap: 10px;
+        gap: 1rem;
         justify-content: space-between;
         align-items: center;
     }
 
     &__title {
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.3;
         color: #fff;
@@ -194,14 +194,14 @@
     }
 
     &__icon {
-        width: 48px;
-        height: 48px;
+        width: 4.8rem;
+        height: 4.8rem;
         border-radius: 50%;
-        margin-top: -20px;
-        margin-right: -20px;
+        margin-top: -2rem;
+        margin-right: -2rem;
         @include mixins.media-down(lg) {
-            margin-top: -10px;
-            margin-right: -10px;
+            margin-top: -1rem;
+            margin-right: -1rem;
         }
         img {
             width: 100%;
@@ -213,16 +213,16 @@
     &__content {
         display: flex;
         align-items: end;
-        gap: 10px;
+        gap: 1rem;
         margin: auto;
     }
 
     &__text {
-        font-size: 14px;
+        font-size: 1.4rem;
         color: #BABABA;
         text-wrap: balance;
         @include mixins.media-down(sm) {
-            font-size: 12px;
+            font-size: 1.2rem;
         }
     }
 }

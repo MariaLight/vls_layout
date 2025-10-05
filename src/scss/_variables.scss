@@ -26,16 +26,16 @@ $font-family-primary: 'Libre Franklin', sans-serif;
 $font-family-secondary: 'Zen Kaku Gothic Anique', sans-serif;
 $font-family-headings: 'TT Interphases', sans-serif;
 
-$font-size-base: 14px;
+$font-size-base: 1.4rem;
 
-$font-size-md: 16px;
-$font-size-xxs: 10px;
-$font-size-xs: 12px;
-$font-size-sm: 14px;
-$font-size-lg: 18px;
-$font-size-xl: 24px;
-$font-size-xxl: 32px;
-$font-size-xxxl: 48px;
+$font-size-md: 1.6rem;
+$font-size-xxs: 1rem;
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2.4rem;
+$font-size-xxl: 3.2rem;
+$font-size-xxxl: 4.8rem;
 
 $line-height-base: 1.2;
 $line-height-lg: 1.4;
@@ -49,25 +49,25 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
 
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
-$spacing-xxl: 48px;
+$spacing-xs: .4rem;
+$spacing-sm: .8rem;
+$spacing-md: 1.6rem;
+$spacing-lg: 2.4rem;
+$spacing-xl: 3.2rem;
+$spacing-xxl: 4.8rem;
 
-$container-max-width: 1400px;
-$container-padding: 20px;
+$container-max-width: 140rem;
+$container-padding: 2rem;
 
 
-$border-gray: 1px solid #5E5E5E;
-$border-radius: 10px;
-$border-radius-xs: 5px;
-$border-radius-sm: 8px;
-$border-radius-md: 12px;
-$border-radius-lg: 16px;
+$border-gray: .1rem solid #5E5E5E;
+$border-radius: 1rem;
+$border-radius-xs: .5rem;
+$border-radius-sm: .8rem;
+$border-radius-md: 1.2rem;
+$border-radius-lg: 1.6rem;
 
-$box-shadow: 0px 1.9px 2.85px 0px #0000002B;
+$box-shadow: 0rem 1.9rem 2.85rem 0rem #0000002B;
 
 $transition-base: all 0.2s linear;
 

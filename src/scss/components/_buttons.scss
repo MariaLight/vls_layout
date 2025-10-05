@@ -8,16 +8,16 @@
     &-main {
         display: flex;
         align-items: center;
-        gap: 23px;
-        padding: 16px;
-        border-radius: 40px;
+        gap: 2.3rem;
+        padding: 1.6rem;
+        border-radius: 4rem;
         background-color: variables.$accent-color-2;
         transition: variables.$transition-base;
         border: 1px solid variables.$border-color;
-        min-width: 260px;
+        min-width: 26rem;
         font-family: variables.$font-family-primary;
         color: variables.$text-color;
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
         line-height: 1.4;
         text-align: center;
@@ -27,7 +27,7 @@
 
         span {
             color: variables.$text-color;
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: 500;
             line-height: 1.4;
         }
@@ -35,13 +35,13 @@
         @include mixins.hover-button;
 
         img {
-            width: 36px;
-            height: 36px;
+            width: 3.6rem;
+            height: 3.6rem;
             object-fit: contain;
             flex-shrink: 0;
             position: absolute;
-            left: 7px;
-            top: 7px;
+            left: 0.7rem;
+            top: 0.7rem;
         }
 
         // &:disabled {
@@ -62,7 +62,7 @@
     &-black {
         color: variables.$text-white;
         background-color: variables.$black-color;
-        padding: 20px 40px;
+        padding: 2rem 4rem;
 
     }
 
