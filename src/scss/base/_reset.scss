@@ -39,7 +39,25 @@ html {
         flex-direction: column;
     }
 }
+@media (min-width:320px) {
+    .page {
+        font-size: calc(100vw / 380 * 10);
+        overflow-x: hidden;
+    }
+}
 
+@media (min-width:variables.$breakpoint-sm) {
+    .page {
+        overflow-x: visible;
+        font-size: calc(100vw / 768 * 10);
+    }
+}
+@media (min-width:variables.$breakpoint-lg) {
+    .page {
+        overflow-x: visible;
+        font-size: calc(100vw / 1440 * 10);
+    }
+}
 .main {
     position: relative;
     z-index: 2;
