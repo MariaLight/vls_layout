@@ -8,7 +8,7 @@ import { initMobileMenu } from './components/mobile-menu.js';
 import './components/news-swiper.js';
 import './components/faq.js';
 document.addEventListener('DOMContentLoaded', () => {
-    initVideoAnimation();
+    // initVideoAnimation();
     initTabs();
     initLoadingTabs();
     initTeamTabs();

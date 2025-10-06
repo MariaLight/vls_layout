@@ -70,7 +70,7 @@ html {
     z-index: 2;
     width: 100%;
     flex: 1 0 auto;
-    padding: 2rem 0 15rem;
+    padding: 2rem 0 14rem;
 
     @include mixins.media-down(lg) {
         overflow: hidden;

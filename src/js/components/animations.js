@@ -129,19 +129,19 @@ function addAnimationClasses() {
         text.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    const loadingFlex = document.querySelectorAll('.loading__flex');
-    loadingFlex.forEach((flex, index) => {
-        flex.classList.add('wow', 'animate__fadeInUp');
-        flex.setAttribute('data-wow-duration', '0.6s');
-        flex.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
-    });
+    // const loadingFlex = document.querySelectorAll('.loading__flex');
+    // loadingFlex.forEach((flex, index) => {
+    //     flex.classList.add('wow', 'animate__fadeInUp');
+    //     flex.setAttribute('data-wow-duration', '0.6s');
+    //     flex.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+    // });
 
-    const loadingGridHeaders = document.querySelectorAll('.loading__grid-item__header');
-    loadingGridHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
-        header.setAttribute('data-wow-duration', '0.6s');
-        header.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
-    });
+    // const loadingGridHeaders = document.querySelectorAll('.loading__grid-item__header');
+    // loadingGridHeaders.forEach((header, index) => {
+    //     header.classList.add('wow', 'animate__fadeInUp');
+    //     header.setAttribute('data-wow-duration', '0.6s');
+    //     header.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
+    // });
 
     // Team элементы
     const teamTabsMain = document.querySelectorAll('.team__tabs-main');

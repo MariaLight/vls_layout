@@ -25,14 +25,14 @@
 .block {
     &__header {
         display: flex;
-        align-items: center;
+        align-items: start;
         gap: 1rem;
         // justify-content: space-between;
 
         @include mixins.media-down(lg) {
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         @include mixins.media-down(sm) {
@@ -54,30 +54,29 @@
     }
 
     &__title {
-        font-size: 3.8rem;
+        font-size: 3.75rem;
         font-weight: 500;
         font-family: variables.$font-family-headings;
         line-height: 1.24;
         color: variables.$text-color;
         text-transform: uppercase;
         text-wrap: balance;
-        letter-spacing: 0.02em;
         padding-left: 3.5rem;
         position: relative;
-        width: calc(50% + 2rem);
+        width: calc(50%);
         flex-shrink: 0;
 
         &::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 1.4rem;
+            top: 1.5rem;
             display: block;
-            width: 2.2rem;
-            height: 2.2rem;
+            width: 1.8rem;
+            height: 1.8rem;
             border-radius: 50%;
             background-color: #fff;
-            border: 0.6rem solid #00462a;
+            border: 0.55rem solid #00462a;
             box-shadow: 0 0 1rem 0.5rem #FFFFFF1A;
 
         }
@@ -94,7 +93,7 @@
             max-width: 70%;
 
             &::before {
-                    width: 1.8rem;
+                width: 1.8rem;
                 height: 1.8rem;
                 top: 0.8rem;
                 border: 0.5rem solid #00462a;
@@ -121,7 +120,8 @@
         font-family: variables.$font-family-primary;
         line-height: 1.25;
         color: variables.$primary-color;
-        padding: 1rem 5rem;
+        padding: 1rem 4rem;
+        text-align: center;
         border-radius: 2.4rem;
         background-color: #1E1E1E;
         color: #00A652;
@@ -129,8 +129,12 @@
         text-wrap: nowrap;
         margin-left: auto;
         width: fit-content;
+        max-width: 18.6rem;
+
+        margin-top: .7rem;
+
         @include mixins.media-down(lg) {
-            
+
             order: 1;
         }
 
@@ -150,18 +154,22 @@
         color: #BABABA;
         max-width: 50rem;
         text-wrap: balance;
+
         @include mixins.media-down(lg) {
             width: 100%;
             order: 2;
             max-width: 100%;
+            padding-left: 3rem;
+            font-size: 1.4rem;
         }
+
         @include mixins.media-down(sm) {
             font-size: 1.2rem;
             order: 2;
         }
     }
 
-    
+
 }
 
 .card {
@@ -201,10 +209,12 @@
         border-radius: 50%;
         margin-top: -2rem;
         margin-right: -2rem;
+
         @include mixins.media-down(lg) {
             margin-top: -1rem;
             margin-right: -1rem;
         }
+
         img {
             width: 100%;
             height: 100%;
@@ -223,6 +233,7 @@
         font-size: 1.4rem;
         color: #BABABA;
         text-wrap: balance;
+
         @include mixins.media-down(sm) {
             font-size: 1.2rem;
         }
