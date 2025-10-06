@@ -178,20 +178,13 @@ textarea {
 }
 
 .container {
-    max-width: variables.$container-max-width;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 variables.$container-padding;
+    padding: 0 2rem;
 }
-
-@include mixins.media-down(xl) {
+@include mixins.media-down(sm) {
     .container {
-        padding: 0 2rem;
-    }
-}
-
-@include mixins.media-down(md) {
-    .container {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 }
 

@@ -316,7 +316,7 @@
         gap: 2rem;
         counter-increment: problems-card;
         position: sticky;
-        top: 27rem;
+        top: 26rem;
 
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr 2fr;
@@ -1018,8 +1018,8 @@
             background-size: 107.8rem 107.8rem;
             background-position: left bottom -50%;
 
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
             padding-bottom: 0;
         }
 
