@@ -32,6 +32,7 @@
         @include mixins.media-down(lg) {
             justify-content: space-between;
             flex-wrap: wrap;
+            align-items: center;
             gap: 3rem;
         }
 
@@ -134,7 +135,7 @@
         margin-top: .7rem;
 
         @include mixins.media-down(lg) {
-
+            margin-top: -.2rem;
             order: 1;
         }
 

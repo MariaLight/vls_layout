@@ -291,6 +291,7 @@
 
             &:first-child {
                 width: 33rem;
+
                 @include mixins.media-down(lg) {
                     width: 26.1rem;
                 }
@@ -298,6 +299,7 @@
 
             &:last-child {
                 width: 103rem;
+
                 @include mixins.media-down(lg) {
                     width: 44.7rem;
                 }
@@ -345,6 +347,7 @@
             grid-template-columns: 1fr 2fr;
             position: static;
             gap: 2rem;
+            height: 41rem;
         }
 
         @include mixins.media-down(sm) {
@@ -361,11 +364,20 @@
             margin-left: -3.5rem;
 
             img {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
 
+            @include mixins.media-down(lg) {
+                width: 26.1rem;
+                height: 15rem;
+                margin-top: 4rem;
+                margin-left: -2.5rem;
+                margin-bottom: 3rem;
+            }
+
         }
+
         &:nth-child(2) .problems__card__left__img {
             width: 12.7rem;
             height: 15.5rem;
@@ -373,11 +385,17 @@
             margin-left: 7.7rem;
 
             img {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
 
+            @include mixins.media-down(lg) {
+                margin-top: 5rem;
+                margin-left: 4.5rem;
+            }
+
         }
+
         &:nth-child(3) .problems__card__left__img {
             width: 14.1rem;
             height: 13.7rem;
@@ -385,11 +403,12 @@
             margin-left: 7.3rem;
 
             img {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
 
         }
+
         &:nth-child(4) .problems__card__left__img {
             width: 12.8rem;
             height: 15.7rem;
@@ -397,11 +416,12 @@
             margin-left: 7.3rem;
 
             img {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
 
         }
+
         &:nth-child(5) .problems__card__left__img {
             width: 10.7rem;
             height: 13.1rem;
@@ -409,7 +429,7 @@
             margin-left: 8.3rem;
 
             img {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
 
@@ -497,6 +517,11 @@
                     object-fit: cover;
                 }
 
+                @include mixins.media-down(lg) {
+                    margin-top: -1.2rem;
+                    margin-right: -1.4rem;
+                }
+
                 @include mixins.media-down(sm) {
                     display: none;
                 }
@@ -537,6 +562,10 @@
                     position: relative;
                     top: -0.7rem;
                     left: .3rem;
+                }
+
+                @include mixins.media-down(lg) {
+                    gap: 0.1rem;
                 }
 
                 @include mixins.media-down(sm) {
@@ -590,6 +619,7 @@
                 background-position: right 3rem;
                 padding-right: 2rem;
                 width: 44.7rem;
+                padding: 2rem;
 
             }
 
@@ -1087,6 +1117,10 @@
 .about {
     position: relative;
 
+    @include mixins.media-down(lg) {
+        padding-top: 0;
+    }
+
     @include mixins.media-down(sm) {
         margin-top: 0;
 
@@ -1115,6 +1149,7 @@
         }
     }
 
+
     &__inner {
         padding: 4.5rem 0 13.6rem;
         background-image: url(../img/base/planet.png);
@@ -1124,7 +1159,8 @@
 
         @include mixins.media-down(lg) {
             background-size: 56rem 56rem;
-            background-position: center bottom 30%;
+            background-position: center bottom -3rem;
+            padding-bottom: 2rem;
         }
 
         @include mixins.media-down(sm) {
@@ -1154,10 +1190,14 @@
 
         @include mixins.media-down(lg) {
             margin-top: 4rem;
-            margin-bottom: 6rem;
+            margin-bottom: 6.7rem;
+            gap: .5rem;
+            align-items: center;
 
             .btn-main {
+                min-width: 35rem;
                 margin-left: 0;
+                margin-top: 0;
             }
         }
 
@@ -1187,7 +1227,11 @@
         @include mixins.media-down(lg) {
             font-size: 1.4rem;
             max-width: 100%;
-            padding-left: 2.8rem;
+            padding-left: 0;
+
+            br {
+                display: none;
+            }
         }
 
         @include mixins.media-down(sm) {
@@ -1226,6 +1270,7 @@
 
         @include mixins.media-down(lg) {
             padding: 2rem;
+            min-height: 21rem;
         }
 
         &__header {
@@ -1256,6 +1301,11 @@
                 margin-right: -1.7rem;
                 flex-shrink: 0;
 
+                @include mixins.media-down(lg) {
+                    margin-top: -1.3rem;
+                    margin-right: -1.2rem;
+                }
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -1280,6 +1330,12 @@
             text-wrap: balance;
             padding-right: 1rem;
             height: 5.5rem;
+
+            @include mixins.media-down(lg) {
+                padding-right: 2rem;
+                height: auto;
+
+            }
         }
 
         &::after {
@@ -1342,7 +1398,33 @@
         z-index: -1;
     }
 
+    .block__title {
+        max-width: 100%;
+        text-wrap: nowrap;
+    }
 
+    @include mixins.media-down(lg) {
+
+        .block__title {
+            max-width: 60%;
+        }
+
+        .btn-main {
+            margin-left: 0;
+        }
+    }
+
+    @include mixins.media-down(sm) {
+
+        .block__header {
+            flex-direction: column;
+
+        }
+
+        .block__title {
+            max-width: 100%;
+        }
+    }
 
     &__header {
         display: flex;
@@ -1352,14 +1434,13 @@
         margin-bottom: 5rem;
         gap: 0;
 
-        .block__title {
-            max-width: 100%;
-            text-wrap: nowrap;
-        }
+
 
         @include mixins.media-down(lg) {
             gap: 2rem;
             margin-bottom: 3rem;
+            margin-top: 3rem;
+            flex-direction: column-reverse;
 
             .block__title {
                 max-width: 60%;
@@ -1427,7 +1508,7 @@
             width: 50%;
         }
 
-        
+
     }
 
     &__header-text {
@@ -1442,17 +1523,27 @@
 
         @include mixins.media-down(lg) {
             width: 100%;
+            font-size: 1.5rem;
+            text-wrap: balance;
+        }
+        @include mixins.media-down(sm) {
+            width: 100%;
             font-size: 1.4rem;
         }
     }
 
     &__content-main {
         display: none;
+
         &:nth-child(1) {
             .loading__grid-item__footer {
                 margin-top: 9.2rem;
+                @include mixins.media-down(lg) {
+                    margin-top: 7.2rem;
+                }
             }
         }
+
         &:nth-child(2) {
             .loading__grid-item__footer {
                 margin-top: 2.1rem;
@@ -1490,6 +1581,9 @@
         &-item {
             &:nth-child(2) {
                 padding-right: 10rem;
+                @include mixins.media-down(lg) {
+                    padding-right: 0;
+                }
             }
 
             p {
@@ -1524,7 +1618,7 @@
             grid-template-columns: 1fr;
         }
 
-        
+
 
         &-item {
             padding: 2.6rem 3.7rem 5.3rem;
@@ -1538,6 +1632,7 @@
 
             @include mixins.media-down(lg) {
                 padding: 2rem 3rem;
+                min-height: 21rem;
             }
 
             @include mixins.media-down(sm) {
@@ -1555,6 +1650,7 @@
                 background-position: bottom right;
                 display: block;
                 background-repeat: no-repeat;
+
             }
 
             &:nth-child(1) {
@@ -1568,7 +1664,7 @@
                 &::after {
                     background-image: url(../img/icons/2-dots-2.svg);
                 }
-                
+
             }
 
             &__header {
@@ -1599,6 +1695,10 @@
                     margin-top: -2rem;
                     margin-right: -3rem;
 
+                    @include mixins.media-down(lg) {
+                        margin-top: -1.3rem;
+                        margin-right: -2.2rem;
+                    }
                     @include mixins.media-down(sm) {
                         width: 3.3rem;
                         height: 3.3rem;
@@ -1669,6 +1769,15 @@
 .services {
     position: relative;
     padding-top: 6rem;
+    @include mixins.media-down(lg) {
+        padding-top: 4rem;
+    }
+
+    @include mixins.media-down(lg) {
+        .block__tag, .block__text {
+            display: none;
+        }
+    }
 
     &::before {
         content: '';
@@ -1807,6 +1916,7 @@
 
 
 
+
         &__img {
             width: 100%;
             height: 100%;
@@ -1847,8 +1957,8 @@
             text-wrap: balance;
 
             @include mixins.media-down(lg) {
-                font-size: 1.2rem;
-                max-width: 25rem;
+                font-size: 2.2rem;
+                max-width: 35rem;
                 overflow: visible;
 
                 &::after {
@@ -1910,21 +2020,15 @@
             height: 40rem;
             padding: 2.4rem 2.8rem 1.8rem 2.8rem;
 
-            &__title {
-                font-size: 1.8rem;
-            }
         }
 
         @include mixins.media-down(lg) {
             height: 39rem;
-            padding: 2rem 2.4rem 1.6rem 2.4rem;
+            padding: 3rem 2.4rem 1.6rem 2.6rem;
 
-            &__title {
-                font-size: 1.6rem;
-            }
         }
 
-        @include mixins.media-down(md) {
+        @include mixins.media-down(sm) {
             height: 38.9rem;
             padding: 0.5rem 0.5rem 2.5rem;
             background-color: #1e1e1e;
@@ -1953,10 +2057,11 @@
 
     @include mixins.media-down(lg) {
         overflow: hidden;
-        min-height: 90rem;
+        padding-top: 29.5rem;
+        height: auto;
         background-image: url(../img/base/cta-bg-tablet.png);
         background-size: contain;
-        background-position: bottom 10rem center;
+        background-position: bottom 2rem center;
     }
 
     @include mixins.media-down(sm) {
@@ -1969,10 +2074,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-margin-bottom: -14rem;
+        margin-bottom: -14rem;
 
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr;
+            margin-bottom: 0;
+            
         }
 
     }
@@ -1992,7 +2099,8 @@ margin-bottom: -14rem;
         padding: 3rem 4.5rem 4.5rem 3.6rem;
 
         @include mixins.media-down(lg) {
-            padding: 2rem;
+            padding: 3rem ;
+            gap: 3rem;
         }
 
         @include mixins.media-down(sm) {
@@ -2004,7 +2112,7 @@ margin-bottom: -14rem;
             align-items: center;
             justify-content: space-between;
             gap: 1.6rem;
-            
+
 
             @include mixins.media-down(sm) {
                 gap: 1.5rem;
@@ -2061,6 +2169,11 @@ margin-bottom: -14rem;
 
             @include mixins.media-down(lg) {
                 font-size: 1.4rem;
+                max-width: 98%;
+
+                br {
+                    display: none;
+                }
             }
 
             @include mixins.media-down(sm) {
@@ -2075,6 +2188,9 @@ margin-bottom: -14rem;
 
     &__right {
         padding: 5.2rem 4.6rem 4.6rem 4.6rem;
+        @include mixins.media-down(lg) {
+            padding: 3rem;
+        }
     }
 
     &__form {
@@ -2088,6 +2204,9 @@ margin-bottom: -14rem;
         gap: 2rem;
         margin-bottom: 3.5rem;
 
+        @include mixins.media-down(lg) {
+            margin-bottom: 3rem;
+        }
         @include mixins.media-down(sm) {
             gap: 1.5rem;
             grid-template-columns: 1fr;
@@ -2098,12 +2217,18 @@ margin-bottom: -14rem;
         width: 100%;
         justify-content: center;
         margin-top: 3rem;
+        @include mixins.media-down(lg) {
+            margin-top: 2rem;
+        }
     }
 }
 
 .team {
     position: relative;
     padding-top: 19rem;
+    @include mixins.media-down(lg) {
+        padding-top: 4rem;
+    }
 
 
     &::after {
@@ -2633,6 +2758,7 @@ margin-bottom: -14rem;
         border: .1rem solid #2F2F2F;
         border-radius: 2.6rem;
         background-color: #1E1E1E;
+
         &:nth-child(2) {
             padding: 5.3rem 4.4rem;
         }
