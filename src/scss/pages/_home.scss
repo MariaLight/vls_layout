@@ -1035,6 +1035,9 @@
 
                 @include mixins.media-down(sm) {
                     padding: 1.5rem;
+                    border-radius: 1.5rem;
+                    padding-right: 1rem;
+                    padding-left: 1rem;
                 }
 
                 &::after {
@@ -1135,7 +1138,7 @@
 
                         @include mixins.media-down(sm) {
                             font-size: 1.2rem;
-                            max-width: 55%;
+                            max-width: 60%;
                         }
 
                     }
@@ -1162,7 +1165,7 @@
 
                         @include mixins.media-down(sm) {
                             font-size: 1.2rem;
-                            width: 10rem;
+                            width: 9rem;
                             text-wrap: balance;
                         }
                     }
@@ -1493,6 +1496,8 @@
 
         .block__title {
             max-width: 100%;
+            text-wrap: balance;
+
         }
     }
 
@@ -1776,8 +1781,8 @@
                     @include mixins.media-down(sm) {
                         width: 3.3rem;
                         height: 3.3rem;
-                        margin-top: 0;
-                        margin-right: 0;
+                        margin-right: -1rem;
+        margin-top: -1rem;
                     }
                 }
 
