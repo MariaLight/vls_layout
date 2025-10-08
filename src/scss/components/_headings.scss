@@ -167,6 +167,7 @@
         @include mixins.media-down(sm) {
             font-size: 1.2rem;
             order: 2;
+            padding-left: 0;
         }
     }
 
