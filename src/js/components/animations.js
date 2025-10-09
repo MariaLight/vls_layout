@@ -182,35 +182,32 @@ function addAnimationClasses() {
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    const missionBlockHeaders = document.querySelectorAll('.mission__block__header');
-    missionBlockHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUpSmall');
-        header.setAttribute('data-wow-duration', '0.8s');
-        header.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
-    });
-
-    const missionBlockText = document.querySelectorAll('.mission__block__text');
-    missionBlockText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUpSmall');
-        text.setAttribute('data-wow-duration', '0.8s');
-        text.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
+    const missionBlocks = document.querySelectorAll('.mission__block');
+    missionBlocks.forEach((block, index) => {
+        // Первый блок - слева, второй - справа
+        const animationClass = index === 0 ? 'animate__fadeInLeftSmall' : 'animate__fadeInRightSmall';
+        block.classList.add('wow', animationClass);
+        block.setAttribute('data-wow-duration', '0.8s');
+        block.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     // Values элементы
-    const valuesHeader = document.querySelectorAll('.values__header');
-    valuesHeader.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUpSmall');
-        header.setAttribute('data-wow-duration', '0.8s');
-        header.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    const valuesBlocks = document.querySelectorAll('.values__block');
+    valuesBlocks.forEach((block, index) => {
+        // Чередуем: четные - слева, нечетные - справа
+        const animationClass = 'animate__fadeInUpSmall';
+        block.classList.add('wow', animationClass);
+        block.setAttribute('data-wow-duration', '0.8s');
+        block.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     // Card элементы
-    const cardTitles = document.querySelectorAll('.card__title');
-    cardTitles.forEach((title, index) => {
-        title.classList.add('wow', 'animate__fadeInUpSmall');
-        title.setAttribute('data-wow-duration', '0.6s');
-        title.setAttribute('data-wow-delay', `${index * 0.1}s`);
-    });
+    // const cardTitles = document.querySelectorAll('.card__title');
+    // cardTitles.forEach((title, index) => {
+    //     title.classList.add('wow', 'animate__fadeInUpSmall');
+    //     title.setAttribute('data-wow-duration', '0.6s');
+    //     title.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    // });
 
     // Docs элементы
     const docsCards = document.querySelectorAll('.docs__card');
