@@ -1,4 +1,4 @@
-import { animateTariffsContent, animateTariffsTabs } from './animations.js';
+import { animateTariffsContent, animateTariffsTabs, animateLoadingContent } from './animations.js';
 
 function initTabs() {
     const mainTabs = document.querySelectorAll('.tariffs__tab-main');
@@ -90,6 +90,9 @@ function initLoadingTabs() {
             const activeContent = document.querySelector(`[data-content="${tabName}"]`);
             if (activeContent) {
                 activeContent.classList.add('active');
+                
+                // Запускаем анимацию для элементов loading
+                animateLoadingContent(activeContent);
             }
         });
     });

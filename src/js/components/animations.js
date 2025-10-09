@@ -77,11 +77,18 @@ function addAnimationClasses() {
 
 
     // FAQ элементы
-    const faqDetails = document.querySelectorAll('.faq__block details');
-    faqDetails.forEach((detail, index) => {
-        detail.classList.add('wow', 'animate__fadeInUpSmall');
-        detail.setAttribute('data-wow-duration', '0.6s');
-        detail.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    const faqContent = document.querySelectorAll('.faq__content');
+    faqContent.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInLeftSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
+        element.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    });
+
+    const faqCallback = document.querySelectorAll('.faq__callback');
+    faqCallback.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInRightSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
+        element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     // Контакты
@@ -114,20 +121,6 @@ function addAnimationClasses() {
         text.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    // const loadingFlex = document.querySelectorAll('.loading__flex');
-    // loadingFlex.forEach((flex, index) => {
-    //     flex.classList.add('wow', 'animate__fadeInUp');
-    //     flex.setAttribute('data-wow-duration', '0.6s');
-    //     flex.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
-    // });
-
-    // const loadingGridHeaders = document.querySelectorAll('.loading__grid-item__header');
-    // loadingGridHeaders.forEach((header, index) => {
-    //     header.classList.add('wow', 'animate__fadeInUp');
-    //     header.setAttribute('data-wow-duration', '0.6s');
-    //     header.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
-    // });
-
     // Team элементы
     const teamTabsMain = document.querySelectorAll('.team__tabs-main');
     teamTabsMain.forEach((tab, index) => {
@@ -144,47 +137,33 @@ function addAnimationClasses() {
     });
 
     // CTA элементы
-    const ctaElements = document.querySelectorAll('.cta__title, .cta__subtitle, .cta__button, .cta__image');
-    ctaElements.forEach((element, index) => {
-        element.classList.add('wow', 'animate__fadeInUpSmall');
-        element.setAttribute('data-wow-duration', '0.6s');
+    const ctaLeft = document.querySelectorAll('.cta__left');
+    ctaLeft.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInLeftSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
         element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    const ctaLeftHeader = document.querySelectorAll('.cta__left__header');
-    ctaLeftHeader.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUpSmall');
-        header.setAttribute('data-wow-duration', '0.8s');
-        header.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    const ctaRight = document.querySelectorAll('.cta__right');
+    ctaRight.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInRightSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
+        element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    const ctaLeftText = document.querySelectorAll('.cta__left__text');
-    ctaLeftText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUpSmall');
-        text.setAttribute('data-wow-duration', '0.8s');
-        text.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+    // Контакты
+    const contactsContent = document.querySelectorAll('.contacts__content');
+    contactsContent.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInLeftSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
+        element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    // Контакты дополнительные элементы
-    const contactsTitle = document.querySelectorAll('.contacts__title');
-    contactsTitle.forEach((title, index) => {
-        title.classList.add('wow', 'animate__fadeInUpSmall');
-        title.setAttribute('data-wow-duration', '0.8s');
-        title.setAttribute('data-wow-delay', `${index * 0.1}s`);
-    });
-
-    const contactsList = document.querySelectorAll('.contacts__list');
-    contactsList.forEach((list, index) => {
-        list.classList.add('wow', 'animate__fadeInUpSmall');
-        list.setAttribute('data-wow-duration', '0.6s');
-        list.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
-    });
-
-    const contactsSocials = document.querySelectorAll('.contacts__socials');
-    contactsSocials.forEach((socials, index) => {
-        socials.classList.add('wow', 'animate__fadeInUpSmall');
-        socials.setAttribute('data-wow-duration', '0.6s');
-        socials.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
+    const contactsMap = document.querySelectorAll('.contacts__map');
+    contactsMap.forEach((element, index) => {
+        element.classList.add('wow', 'animate__fadeInRightSmall');
+        element.setAttribute('data-wow-duration', '0.8s');
+        element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     // Company элементы
@@ -275,6 +254,14 @@ function resetAnimationForElements(elements) {
                     element.classList.add('animate__fadeInLeftSmall');
                 } else if (element.classList.contains('tariffs__content-sub__inner__card')) {
                     element.classList.add('animate__fadeInRightSmall');
+                } else if (element.classList.contains('loading__flex')) {
+                    element.classList.add('animate__fadeInUpSmall');
+                } else if (element.classList.contains('loading__grid-item')) {
+                    // Определяем первый или второй элемент
+                    const parent = element.parentElement;
+                    const items = parent.querySelectorAll('.loading__grid-item');
+                    const index = Array.from(items).indexOf(element);
+                    element.classList.add(index === 0 ? 'animate__fadeInLeftSmall' : 'animate__fadeInRightSmall');
                 }
             });
         });
@@ -352,12 +339,63 @@ function animateTariffsContent(container) {
     resetAnimationForElements(allElements);
 }
 
+// Функция для добавления WOW классов к элементам loading
+function addLoadingAnimationClasses(container) {
+    // Добавляем классы для loading__flex
+    const loadingFlex = container.querySelectorAll('.loading__flex');
+    loadingFlex.forEach(flex => {
+        if (!flex.classList.contains('wow')) {
+            flex.classList.add('wow', 'animate__fadeInUpSmall');
+            flex.setAttribute('data-wow-duration', '0.6s');
+            flex.setAttribute('data-wow-delay', '0s');
+            flex.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
+        }
+    });
+    
+    // Добавляем классы для loading__grid-item
+    const loadingGridItems = container.querySelectorAll('.loading__grid-item');
+    loadingGridItems.forEach((item, index) => {
+        if (!item.classList.contains('wow')) {
+            // Первый - слева, второй - справа
+            const animationClass = index === 0 ? 'animate__fadeInLeftSmall' : 'animate__fadeInRightSmall';
+            item.classList.add('wow', animationClass);
+            item.setAttribute('data-wow-duration', '0.8s');
+            item.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+            item.setAttribute('data-wow-animation', animationClass);
+        }
+    });
+}
+
+// Функция для анимации элементов loading при переключении табов
+function animateLoadingContent(container) {
+    if (!container) return;
+    
+    // Добавляем WOW классы, если их еще нет
+    addLoadingAnimationClasses(container);
+    
+    // Находим элементы для анимации
+    const loadingFlex = container.querySelectorAll('.loading__flex');
+    const loadingGridItems = container.querySelectorAll('.loading__grid-item');
+    
+    // Собираем все элементы для перезапуска анимации
+    const allElements = [...loadingFlex, ...loadingGridItems];
+    
+    // Перезапускаем анимацию
+    resetAnimationForElements(allElements);
+}
+
 function initAnimations() {
     // Добавляем классы анимации к элементам
     addAnimationClasses();
     
     // Добавляем WOW классы для элементов тарифов
     addTariffsAnimationClasses();
+    
+    // Добавляем WOW классы для элементов loading
+    const loadingContents = document.querySelectorAll('.loading__content-main');
+    loadingContents.forEach(content => {
+        addLoadingAnimationClasses(content);
+    });
 
     // Инициализируем WOW.js и сохраняем instance
     if (typeof WOW !== 'undefined') {
@@ -404,5 +442,5 @@ function addTariffsAnimationClasses() {
     });
 }
 
-export { initAnimations, animateTariffsContent, animateTariffsTabs };
+export { initAnimations, animateTariffsContent, animateTariffsTabs, animateLoadingContent };
 
