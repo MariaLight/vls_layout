@@ -2226,6 +2226,9 @@
         border: .1rem solid #2F2F2F;
         border-radius: 3rem;
         background-color: #1E1E1E;
+        @include mixins.media-down(sm) {
+            border-radius: 1.5rem;
+        }
     }
 
     &__left {
