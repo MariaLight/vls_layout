@@ -591,6 +591,20 @@
 .more {
     position: relative;
 
+    .block__header {
+        position: sticky;
+        top: 7rem;
+        z-index: -1;
+        padding-bottom: 2rem;
+
+        @include mixins.media-down(lg) {
+            position: relative; // Отключаем sticky на мобильных
+            top: auto;
+            background-color: transparent;
+            padding-bottom: 0;
+        }
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -616,6 +630,7 @@
         @include mixins.media-down(lg) {
             gap: 3rem;
             margin-top: 4rem;
+            padding-bottom: 0; // На мобильных не нужно
         }
     }
 
@@ -624,12 +639,16 @@
         grid-template-columns: 3fr 1fr;
         gap: 2rem;
         height: 45.1rem;
+        position: sticky;
+        top: 20rem; // Все карточки липнут к одной позиции
 
         @include mixins.media-down(lg) {
             display: flex;
             flex-direction: column-reverse;
             gap: 1rem;
             height: auto;
+            position: relative; // Отключаем sticky на мобильных
+            top: auto;
         }
 
         @include mixins.media-down(sm) {
