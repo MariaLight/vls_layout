@@ -75,21 +75,6 @@ function addAnimationClasses() {
         tab.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
 
-    // Заголовки контента тарифов sub
-    const tariffsContentSubTitles = document.querySelectorAll('.tariffs__content-sub__inner__title');
-    tariffsContentSubTitles.forEach((title, index) => {
-        title.classList.add('wow', 'animate__fadeInUp');
-        title.setAttribute('data-wow-duration', '0.6s');
-        title.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
-    });
-
-    // Элементы списка тарифов sub
-    const tariffsContentSubListItems = document.querySelectorAll('.tariffs__content-sub__inner__list__item');
-    tariffsContentSubListItems.forEach((item, index) => {
-        item.classList.add('wow', 'animate__fadeInUp');
-        item.setAttribute('data-wow-duration', '0.5s');
-        item.setAttribute('data-wow-delay', `${0.3 + index * 0.05}s`);
-    });
 
     // FAQ элементы
     const faqDetails = document.querySelectorAll('.faq__block details');
@@ -257,23 +242,167 @@ function addAnimationClasses() {
     });
 }
 
+// Глобальная переменная для WOW instance
+let wowInstance = null;
+
+// Функция для перезапуска анимации для конкретных элементов
+function resetAnimationForElements(elements) {
+    elements.forEach(element => {
+        // Удаляем классы анимации
+        const animationClasses = Array.from(element.classList).filter(cls => cls.startsWith('animate__'));
+        animationClasses.forEach(cls => element.classList.remove(cls));
+        element.classList.remove('animate__animated');
+        
+        // Сбрасываем inline стили
+        element.style.visibility = 'visible';
+        element.style.animationName = 'none';
+    });
+    
+    // Запускаем анимации после небольшой задержки
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            elements.forEach(element => {
+                // Возвращаем классы анимации
+                element.classList.add('animate__animated');
+                element.style.animationName = '';
+                
+                // Определяем тип анимации по data-атрибутам или классам wow
+                if (element.hasAttribute('data-wow-animation')) {
+                    element.classList.add(element.getAttribute('data-wow-animation'));
+                } else if (element.classList.contains('tariffs__tabs-sub')) {
+                    element.classList.add('animate__fadeInUp');
+                } else if (element.classList.contains('tariffs__content-sub__inner__image')) {
+                    element.classList.add('animate__fadeInLeftSmall');
+                } else if (element.classList.contains('tariffs__content-sub__inner__card')) {
+                    element.classList.add('animate__fadeInRightSmall');
+                }
+            });
+        });
+    });
+}
+
+// Функция для добавления WOW классов к элементам контейнера
+function addWowClassesToContainer(container) {
+    // Добавляем классы для подтабов
+    const tabsSubContainer = container.querySelector('.tariffs__tabs-sub');
+    if (tabsSubContainer && !tabsSubContainer.classList.contains('wow')) {
+        tabsSubContainer.classList.add('wow', 'animate__fadeInUp');
+        tabsSubContainer.setAttribute('data-wow-duration', '0.6s');
+        tabsSubContainer.setAttribute('data-wow-delay', '0s');
+        tabsSubContainer.setAttribute('data-wow-animation', 'animate__fadeInUp');
+    }
+    
+    // Добавляем классы для изображений
+    const tariffsImages = container.querySelectorAll('.tariffs__content-sub__inner__image');
+    tariffsImages.forEach(img => {
+        if (!img.classList.contains('wow')) {
+            img.classList.add('wow', 'animate__fadeInLeftSmall');
+            img.setAttribute('data-wow-duration', '0.8s');
+            img.setAttribute('data-wow-delay', '0.1s');
+            img.setAttribute('data-wow-animation', 'animate__fadeInLeftSmall');
+        }
+    });
+    
+    // Добавляем классы для карточек
+    const tariffsCards = container.querySelectorAll('.tariffs__content-sub__inner__card');
+    tariffsCards.forEach((card, index) => {
+        if (!card.classList.contains('wow')) {
+            card.classList.add('wow', 'animate__fadeInRightSmall');
+            card.setAttribute('data-wow-duration', '0.8s');
+            card.setAttribute('data-wow-delay', `${0.2 + (index % 3) * 0.15}s`);
+            card.setAttribute('data-wow-animation', 'animate__fadeInRightSmall');
+        }
+    });
+}
+
+// Функция для анимации табов при переключении основных табов
+function animateTariffsTabs(container) {
+    if (!container) return;
+    
+    // Добавляем WOW классы, если их еще нет
+    addWowClassesToContainer(container);
+    
+    // Находим контейнер подтабов
+    const tabsSubContainer = container.querySelector('.tariffs__tabs-sub');
+    
+    if (!tabsSubContainer) return;
+    
+    // Перезапускаем анимацию для подтабов
+    resetAnimationForElements([tabsSubContainer]);
+}
+
+// Функция для анимации элементов тарифов при переключении табов
+function animateTariffsContent(container) {
+    if (!container) return;
+    
+    // Добавляем WOW классы, если их еще нет
+    const parentContainer = container.closest('.tariffs__content-main');
+    if (parentContainer) {
+        addWowClassesToContainer(parentContainer);
+    }
+    
+    // Находим изображение и карточки внутри активного контейнера
+    const tariffsImg = container.querySelectorAll('.tariffs__content-sub__inner__image');
+    const tariffsCards = container.querySelectorAll('.tariffs__content-sub__inner__card');
+    
+    // Собираем все элементы для перезапуска анимации
+    const allElements = [...tariffsImg, ...tariffsCards];
+    
+    // Перезапускаем анимацию
+    resetAnimationForElements(allElements);
+}
+
 function initAnimations() {
     // Добавляем классы анимации к элементам
     addAnimationClasses();
+    
+    // Добавляем WOW классы для элементов тарифов
+    addTariffsAnimationClasses();
 
-    // Инициализируем WOW.js
+    // Инициализируем WOW.js и сохраняем instance
     if (typeof WOW !== 'undefined') {
-        new WOW({
+        wowInstance = new WOW({
             boxClass: 'wow',
             animateClass: 'animate__animated',
             offset: 100,
             mobile: true,
             live: true,
             scrollContainer: null,
-            resetAnimation: false
-        }).init();
+            resetAnimation: true
+        });
+        wowInstance.init();
     }
 }
 
-export { initAnimations };
+// Функция для добавления классов анимации к элементам тарифов
+function addTariffsAnimationClasses() {
+    // Добавляем классы для подтабов
+    const tariffsTabsSub = document.querySelectorAll('.tariffs__tabs-sub');
+    tariffsTabsSub.forEach(tabs => {
+        tabs.classList.add('wow', 'animate__fadeInUp');
+        tabs.setAttribute('data-wow-duration', '0.6s');
+        tabs.setAttribute('data-wow-delay', '0s');
+        tabs.setAttribute('data-wow-animation', 'animate__fadeInUp');
+    });
+    
+    // Добавляем классы для изображений
+    const tariffsImages = document.querySelectorAll('.tariffs__content-sub__inner__image');
+    tariffsImages.forEach(img => {
+        img.classList.add('wow', 'animate__fadeInLeftSmall');
+        img.setAttribute('data-wow-duration', '0.8s');
+        img.setAttribute('data-wow-delay', '0.1s');
+        img.setAttribute('data-wow-animation', 'animate__fadeInLeftSmall');
+    });
+    
+    // Добавляем классы для карточек
+    const tariffsCards = document.querySelectorAll('.tariffs__content-sub__inner__card');
+    tariffsCards.forEach((card, index) => {
+        card.classList.add('wow', 'animate__fadeInRightSmall');
+        card.setAttribute('data-wow-duration', '0.8s');
+        card.setAttribute('data-wow-delay', `${0.2 + (index % 3) * 0.15}s`);
+        card.setAttribute('data-wow-animation', 'animate__fadeInRightSmall');
+    });
+}
+
+export { initAnimations, animateTariffsContent, animateTariffsTabs };
 

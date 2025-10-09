@@ -1,3 +1,5 @@
+import { animateTariffsContent, animateTariffsTabs } from './animations.js';
+
 function initTabs() {
     const mainTabs = document.querySelectorAll('.tariffs__tab-main');
     const mainContents = document.querySelectorAll('.tariffs__content-main');
@@ -19,6 +21,15 @@ function initTabs() {
             if (activeContent) {
                 activeContent.classList.add('active');
                 initSubTabs(activeContent);
+                
+                // Запускаем анимацию для подтабов
+                animateTariffsTabs(activeContent);
+                
+                // Запускаем анимацию для первого активного подтаба
+                const firstActiveSubContent = activeContent.querySelector('.tariffs__content-sub.active');
+                if (firstActiveSubContent) {
+                    animateTariffsContent(firstActiveSubContent);
+                }
             }
         });
     });
@@ -48,6 +59,9 @@ function initTabs() {
             const activeSubContent = container.querySelector(`[data-subcontent="${subtabName}"]`);
             if (activeSubContent) {
                 activeSubContent.classList.add('active');
+                
+                // Запускаем анимацию при переключении подтаба
+                animateTariffsContent(activeSubContent);
             }
         }
     };

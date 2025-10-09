@@ -4,6 +4,37 @@
 /**
  * Стили главной страницы
  */
+
+// Кастомные анимации с небольшим смещением
+@keyframes fadeInLeftSmall {
+    from {
+        opacity: 0;
+        transform: translate3d(-5rem, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRightSmall {
+    from {
+        opacity: 0;
+        transform: translate3d(5rem, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate__fadeInLeftSmall {
+    animation-name: fadeInLeftSmall;
+}
+
+.animate__fadeInRightSmall {
+    animation-name: fadeInRightSmall;
+}
 .banner {
     background-image: url(../img/base/bg/mainscreen-bg.svg);
     background-size: cover;
