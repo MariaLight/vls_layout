@@ -1,3 +1,5 @@
+// Импорт стилей Lenis для плавного скролла
+import 'lenis/dist/lenis.css';
 
 import { initVideoAnimation } from './components/home.js';
 import { initTabs, initLoadingTabs, initTeamTabs, initTeamAccordions } from './components/tabs.js';
@@ -7,6 +9,7 @@ import { initModals } from './components/modal.js';
 import { initMobileMenu } from './components/mobile-menu.js';
 import './components/news-swiper.js';
 import './components/faq.js';
+import './components/smooth-scroll.js';
 document.addEventListener('DOMContentLoaded', () => {
     initVideoAnimation();
     initTabs();
