@@ -37,6 +37,24 @@ class Modal {
                     this.closeModal(modal);
                 }
             });
+
+            // Обработка колесика мыши для скролла внутри модального окна
+            const modalInner = modal.querySelector('.modal__inner');
+            if (modalInner) {
+                modal.addEventListener('wheel', (e) => {
+                    // Проверяем, активно ли модальное окно
+                    if (!modal.classList.contains('modal_active')) {
+                        return;
+                    }
+                    
+                    // ВСЕГДА предотвращаем скролл страницы когда модальное окно открыто
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Скроллим modal__inner
+                    modalInner.scrollTop += e.deltaY;
+                }, { passive: false });
+            }
         });
 
         document.addEventListener('keydown', (e) => {
@@ -56,9 +74,18 @@ class Modal {
         // Закрываем все открытые модальные окна
         this.closeAllModals();
 
+        // Вычисляем ширину скроллбара для компенсации
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        // Блокируем скролл через CSS, БЕЗ изменения позиции
+        this.body.style.overflow = 'hidden';
+        this.body.style.paddingRight = `${scrollbarWidth}px`;
+        
+        // Также блокируем на html для надежности
+        document.documentElement.style.overflow = 'hidden';
+
         // Открываем нужное модальное окно
         modal.classList.add('modal_active');
-        this.body.style.overflow = 'hidden';
         
         // Фокус на модальном окне для доступности
         modal.focus();
@@ -76,7 +103,11 @@ class Modal {
         if (!modal) return;
 
         modal.classList.remove('modal_active');
+        
+        // Восстанавливаем стили body
         this.body.style.overflow = '';
+        this.body.style.paddingRight = '';
+        document.documentElement.style.overflow = '';
         
         // Анимация исчезновения
         modal.style.opacity = '0';
@@ -114,7 +145,7 @@ class Modal {
                 if (animationClass) {
                     element.classList.add(animationClass);
                 }
-            }, 100 + (index * 100)); // Задержка для каждого элемента
+            }, 50 + (index * 50)); // Задержка для каждого элемента
         });
     }
     
@@ -123,7 +154,7 @@ class Modal {
         const modalHeader = modal.querySelector('.block__header');
         if (modalHeader && !modalHeader.classList.contains('wow')) {
             modalHeader.classList.add('wow', 'animate__fadeInUpSmall');
-            modalHeader.setAttribute('data-wow-duration', '0.6s');
+            modalHeader.setAttribute('data-wow-duration', '0.3s');
             modalHeader.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
         }
         
@@ -132,8 +163,8 @@ class Modal {
         modalCards.forEach((card, index) => {
             if (!card.classList.contains('wow')) {
                 card.classList.add('wow', 'animate__fadeInUpSmall');
-                card.setAttribute('data-wow-duration', '0.6s');
-                card.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+                card.setAttribute('data-wow-duration', '0.4s');
+                card.setAttribute('data-wow-delay', `${0.05 + index * 0.05}s`);
                 card.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
             }
         });
