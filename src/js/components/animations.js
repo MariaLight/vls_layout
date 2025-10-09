@@ -439,5 +439,5 @@ function addTariffsAnimationClasses() {
     });
 }
 
-export { initAnimations, animateTariffsContent, animateTariffsTabs, animateLoadingContent };
+export { initAnimations, animateTariffsContent, animateTariffsTabs, animateLoadingContent, wowInstance };
 

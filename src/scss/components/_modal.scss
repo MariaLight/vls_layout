@@ -34,7 +34,7 @@
 
     &__inner {
         position: relative;
-        max-width: 95%;
+        max-width: 100%;
         width: fit-content;
         padding-top: 6rem;
     }
@@ -161,6 +161,59 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+    }
+}
+
+.modal__services {
+    &__blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+        @include mixins.media-down(lg) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+    }
+
+    &__block {
+        background-color: #1e1e1e;
+        border: .1rem solid #2f2f2f;
+        border-radius: 2.6rem;
+        padding: 4.2rem 4.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        @include mixins.media-down(lg) {
+            gap: 1rem;
+            padding: 2rem;
+            border-radius: 1.5rem;
+        }
+        @include mixins.media-down(sm) {
+            padding: 1.5rem;
+        }
+
+        &__card {
+            background-color: #323232;
+            padding: 2.3rem 3rem;
+            border-radius: 2.6rem;
+            @include mixins.media-down(lg) {
+                border-radius: 1.5rem;
+            }
+            @include mixins.media-down(sm) {
+                padding: 2.3rem 2rem;
+            }
+
+            &__title {
+                text-transform: none;
+            }
+
+            &__icon {
+                width: 3.8rem;
+                height: 3.8rem;
+            }
         }
     }
 }
