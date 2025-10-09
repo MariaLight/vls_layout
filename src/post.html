@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новость - VLS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./scss/style.scss">
+</head>
+
+<body class="page__body">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <nav class="header__nav">
+                    <ul class="header__nav-list list-reset">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Компания
+                            </a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Автопарк
+                            </a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Услуги
+                            </a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header__logo">
+                    <img src="./img/base/logo.png" alt="VLS Logistics. Температурная логистика">
+                </div>
+
+                <div class="header__contacts">
+                    <a href="tel:+74953745420" class="header__contacts-link">
+                        <img src="./img/icons/tel.svg" alt="Телефон">
+                        <span>8 (495) - 374- 54 -20</span>
+                    </a>
+                    <a href="#" target="_blank" class="header__contacts-link socials__link">
+                        <img src="./img/icons/whatsapp.svg" alt="WhatsApp">
+                    </a>
+                    <a href="#" target="_blank" class="header__contacts-link socials__link">
+                        <img src="./img/icons/tg.svg" alt="Telegram">
+                    </a>
+                </div>
+
+                <button class="header__burger header__contacts-link socials__link" type="button"
+                    aria-label="Открыть меню">
+                    <img src="./img/icons/burger.svg" alt="Меню">
+
+                </button>
+            </div>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu__header">
+                <div class="mobile-menu__logo">
+                    <img src="./img/base/logo.png" alt="VLS Logistics. Температурная логистика">
+                </div>
+                <button class="mobile-menu__close socials__link" type="button" aria-label="Закрыть меню">
+                    <img src="./img/icons/close.svg" alt="Закрыть">
+
+                </button>
+            </div>
+
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__nav-list list-reset">
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Компания
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            О нас
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Ценности
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Автопарк
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Партнеры
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Наша миссия
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            Вакансии
+                        </a>
+                    </li>
+                    <li class="mobile-menu__nav-item">
+                        <a href="#" class="mobile-menu__nav-link">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu__contacts">
+                <a href="tel:+74953745420" class="header__contacts-link">
+                    <img src="./img/icons/tel.svg" alt="Телефон">
+                    <span>8 (495) - 374- 54 -20</span>
+                </a>
+                <a href="#" target="_blank" class="header__contacts-link socials__link">
+                    <img src="./img/icons/whatsapp.svg" alt="WhatsApp">
+                </a>
+                <a href="#" target="_blank" class="header__contacts-link socials__link">
+                    <img src="./img/icons/tg.svg" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <main class="main">
+            <div class="single__post">
+                <div class="container">
+                    <a href="#" class="single__post__back">
+                        На главную страницу</a>
+                    <div class="block__header">
+                        <div class="block__title"><span>Новости</span></div>
+                    </div>
+                    <div class="single__post__inner">
+                        <div class="single__post__content">
+                            <div class="single__post__img">
+                                <img src="./img/temp/news-temp.png" alt="">
+                            </div>
+                            <h1 class="single__post__content__title">
+                                В России обсуждается расширение платы за проезд для грузовиков
+                            </h1>
+
+                            <div class="single__post__content__text">
+                                <p>В России рассматривается возможность расширения системы «Платон» на региональные и
+                                    муниципальные дороги. В настоящее время она действует только на федеральных трассах
+                                    и предназначена для сбора платы с тяжелых грузовиков свыше 12 тонн. Новая инициатива
+                                    направлена на то, чтобы компенсировать износ дорожного покрытия, вызванный крупным
+                                    транспортом.
+
+
+
+                                </p>
+                                <p>
+                                    Как сообщает Mash, ещё в июне ФКУ «Дороги России» объявило тендер на разработку
+                                    системы, которая позволит взимать дополнительные сборы с владельцев грузовиков.
+                                    Победителем стала Высшая школа экономики, которая должна создать соответствующую
+                                    платформу.
+
+                                </p>
+                                <p>
+                                    Мнения экспертов разделились: часть из них поддерживает идею расширения сборов, а
+                                    другие предлагают усовершенствовать существующую систему «Платон». В частности,
+                                    предлагается учитывать экологический класс, возраст и количество осей грузовиков, а
+                                    также сделать оплату более полной — за все рейсы, а не только за часть.
+
+                                </p>
+                                <p>Федеральное дорожное агентство обещало дать официальный ответ в ближайшие дни.</p>
+
+                                <img src="./img/temp/news-temp.png" alt="">
+
+                                <h2>Тест второй</h2>
+
+                                <ul>
+                                    <li>Тест</li>
+                                    <li>Тест</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <aside class="single__post__aside">
+                            <div class="cta__left">
+                                <div class="cta__left__header">
+                                    <div class="cta__left__title">
+                                        свяжитесь с нами
+                                    </div>
+                                    <div class="cta__left__tag">форма для связи</div>
+
+                                </div>
+                                <div class="cta__left__text">
+                                    <p>Мы уверены, что наше сотрудничество станет залогом успеха вашего<br> бизнеса. Не
+                                        откладывайте – свяжитесь
+                                        с нами сегодня, и&nbsp;мы вместе обеспечим сохранность и качество вашей
+                                        продукции!</p>
+                                </div>
+                            </div>
+                            <div class="cta__right">
+                                <form action="" class="cta__form">
+                                    <div class="cta__form-row">
+                                        <div class="faq__callback__field">
+                                            <img src="./img/icons/form-user.svg" alt="" class="faq__callback__icon">
+                                            <input type="text" name="name" placeholder="Ваше имя"
+                                                class="faq__callback__input">
+                                        </div>
+                                        <div class="faq__callback__field">
+                                            <img src="./img/icons/form-tel.svg" alt="" class="faq__callback__icon">
+                                            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__"
+                                                class="faq__callback__input">
+                                        </div>
+                                    </div>
+                                    <label class="faq__callback__checkbox">
+                                        <input type="checkbox" name="acceptance" checked required>
+                                        <span class="faq__callback__checkbox-custom"></span>
+                                        <span class="faq__callback__checkbox-text">Вы соглашаетесь на сбор куки,
+                                            обработку персональных данных<br>
+                                            в соответствии с политикой конфиденциальности</span>
+                                    </label>
+                                    <button type="submit" class="btn-main cta__form-btn">
+                                        <img src="./img/icons/headphones.svg" alt="">
+                                        <span>Отправить заявку</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__top">
+                        <div class="footer__top__left">
+                            <div class="footer__logo">
+                                <img src="./img/base/logo.png" alt="VLS Logistics. Температурная логистика">
+                            </div>
+                            <span class="footer__copyright">ООО “ВЛС Технолоджи” 2014-2025 Ⓒ</span>
+                        </div>
+                        <div class="footer__top__right">
+                            <div class="footer__columns">
+                                <div class="footer__column">
+                                    <div class="footer__column__title">Информация</div>
+                                    <ul class="footer__column__list list-reset">
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Услуги</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Частые вопросы</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer__column">
+                                    <div class="footer__column__title">Компания</div>
+                                    <ul class="footer__column__list list-reset">
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">О нас</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Партнеры</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Наша миссия</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer__column">
+                                    <div class="footer__column__title"></div>
+                                    <ul class="footer__column__list list-reset">
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Ценности</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Автопарк</a>
+                                        </li>
+                                        <li class="footer__column__item">
+                                            <a href="#" class="footer__column__link">Вакансии</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="footer__bottom__left">
+                            <ul class="footer__bottom__list list-reset">
+                                <li class="footer__bottom__item">
+                                    <a href="#" class="footer__bottom__link">Политика конфиденциальности</a>
+                                </li>
+                                <li class="footer__bottom__item">
+                                    <a href="#" class="footer__bottom__link">Политика в отношении файлов cookies</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__bottom__right">
+                            <button class="btn-main footer__bottom__btn">
+                                <img src="./img/icons/icon-arrow.svg" alt="">
+                                <span>Cвязаться с нами</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
