@@ -1321,6 +1321,7 @@
 }
 
 .cta-2 {
+    padding-bottom: 0;
     .block__text {
         max-width: 30.5rem;
         @include mixins.media-down(lg) {
