@@ -2,7 +2,7 @@ function addAnimationClasses() {
     // Заголовки секций
     const sectionHeaders = document.querySelectorAll('.problems__header, .tariffs .problems__header, .faq .problems__header, .contacts .problems__header');
     sectionHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '1s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -18,14 +18,14 @@ function addAnimationClasses() {
     // Табы тарифов
     const tariffsTabs = document.querySelectorAll('.tariffs__tab-main');
     tariffsTabs.forEach((tab, index) => {
-        tab.classList.add('wow', 'animate__fadeInUp');
+        tab.classList.add('wow', 'animate__fadeInUpSmall');
         tab.setAttribute('data-wow-duration', '0.6s');
         tab.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
 
     const tariffsCards = document.querySelectorAll('.tariffs__card');
     tariffsCards.forEach((card, index) => {
-        card.classList.add('wow', 'animate__fadeInUp');
+        card.classList.add('wow', 'animate__fadeInUpSmall');
         card.setAttribute('data-wow-duration', '0.6s');
         card.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
@@ -33,28 +33,28 @@ function addAnimationClasses() {
     // Блоки about
     const aboutHeaders = document.querySelectorAll('.about .block__header');
     aboutHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const aboutDescriptions = document.querySelectorAll('.about__description');
     aboutDescriptions.forEach((description, index) => {
-        description.classList.add('wow', 'animate__fadeInUp');
+        description.classList.add('wow', 'animate__fadeInUpSmall');
         description.setAttribute('data-wow-duration', '0.8s');
         description.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
 
     const aboutButtons = document.querySelectorAll('.about .btn-man');
     aboutButtons.forEach((button, index) => {
-        button.classList.add('wow', 'animate__fadeInUp');
+        button.classList.add('wow', 'animate__fadeInUpSmall');
         button.setAttribute('data-wow-duration', '0.6s');
         button.setAttribute('data-wow-delay', `${0.3 + index * 0.1}s`);
     });
 
     const aboutCards = document.querySelectorAll('.about__card');
     aboutCards.forEach((card, index) => {
-        card.classList.add('wow', 'animate__fadeInUp');
+        card.classList.add('wow', 'animate__fadeInUpSmall');
         card.setAttribute('data-wow-duration', '0.8s');
         card.setAttribute('data-wow-delay', `${0.4 + index * 0.1}s`);
     });
@@ -62,7 +62,7 @@ function addAnimationClasses() {
     // Все block__header
     const allBlockHeaders = document.querySelectorAll('.block__header');
     allBlockHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -70,7 +70,7 @@ function addAnimationClasses() {
     // Табы тарифов sub
     const tariffsTabsSub = document.querySelectorAll('.tariffs__tabs-sub');
     tariffsTabsSub.forEach((tab, index) => {
-        tab.classList.add('wow', 'animate__fadeInUp');
+        tab.classList.add('wow', 'animate__fadeInUpSmall');
         tab.setAttribute('data-wow-duration', '0.6s');
         tab.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
@@ -79,7 +79,7 @@ function addAnimationClasses() {
     // FAQ элементы
     const faqDetails = document.querySelectorAll('.faq__block details');
     faqDetails.forEach((detail, index) => {
-        detail.classList.add('wow', 'animate__fadeInUp');
+        detail.classList.add('wow', 'animate__fadeInUpSmall');
         detail.setAttribute('data-wow-duration', '0.6s');
         detail.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -87,7 +87,7 @@ function addAnimationClasses() {
     // Контакты
     const contactsCards = document.querySelectorAll('.contacts__card, .contacts__info, .contacts__form');
     contactsCards.forEach((card, index) => {
-        card.classList.add('wow', 'animate__fadeInUp');
+        card.classList.add('wow', 'animate__fadeInUpSmall');
         card.setAttribute('data-wow-duration', '0.8s');
         card.setAttribute('data-wow-delay', `${index * 0.15}s`);
     });
@@ -95,21 +95,21 @@ function addAnimationClasses() {
     // Loading элементы
     const loadingTabs = document.querySelector('.loading__tabs-main');
     if (loadingTabs) {
-        loadingTabs.classList.add('wow', 'animate__fadeInUp');
+        loadingTabs.classList.add('wow', 'animate__fadeInUpSmall');
         loadingTabs.setAttribute('data-wow-duration', '0.6s');
         loadingTabs.setAttribute('data-wow-delay', '0.1s');
     }
 
     const loadingSteps = document.querySelectorAll('.loading__step');
     loadingSteps.forEach((step, index) => {
-        step.classList.add('wow', 'animate__fadeInUp');
+        step.classList.add('wow', 'animate__fadeInUpSmall');
         step.setAttribute('data-wow-duration', '0.6s');
         step.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
 
     const loadingHeaderText = document.querySelectorAll('.loading__header-text');
     loadingHeaderText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUp');
+        text.classList.add('wow', 'animate__fadeInUpSmall');
         text.setAttribute('data-wow-duration', '0.8s');
         text.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -131,14 +131,14 @@ function addAnimationClasses() {
     // Team элементы
     const teamTabsMain = document.querySelectorAll('.team__tabs-main');
     teamTabsMain.forEach((tab, index) => {
-        tab.classList.add('wow', 'animate__fadeInUp');
+        tab.classList.add('wow', 'animate__fadeInUpSmall');
         tab.setAttribute('data-wow-duration', '0.6s');
         tab.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const teamTabsSub = document.querySelectorAll('.team__tab-sub');
     teamTabsSub.forEach((tab, index) => {
-        tab.classList.add('wow', 'animate__fadeInUp');
+        tab.classList.add('wow', 'animate__fadeInUpSmall');
         tab.setAttribute('data-wow-duration', '0.6s');
         tab.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
@@ -146,21 +146,21 @@ function addAnimationClasses() {
     // CTA элементы
     const ctaElements = document.querySelectorAll('.cta__title, .cta__subtitle, .cta__button, .cta__image');
     ctaElements.forEach((element, index) => {
-        element.classList.add('wow', 'animate__fadeInUp');
+        element.classList.add('wow', 'animate__fadeInUpSmall');
         element.setAttribute('data-wow-duration', '0.6s');
         element.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const ctaLeftHeader = document.querySelectorAll('.cta__left__header');
     ctaLeftHeader.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const ctaLeftText = document.querySelectorAll('.cta__left__text');
     ctaLeftText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUp');
+        text.classList.add('wow', 'animate__fadeInUpSmall');
         text.setAttribute('data-wow-duration', '0.8s');
         text.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
@@ -168,21 +168,21 @@ function addAnimationClasses() {
     // Контакты дополнительные элементы
     const contactsTitle = document.querySelectorAll('.contacts__title');
     contactsTitle.forEach((title, index) => {
-        title.classList.add('wow', 'animate__fadeInUp');
+        title.classList.add('wow', 'animate__fadeInUpSmall');
         title.setAttribute('data-wow-duration', '0.8s');
         title.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const contactsList = document.querySelectorAll('.contacts__list');
     contactsList.forEach((list, index) => {
-        list.classList.add('wow', 'animate__fadeInUp');
+        list.classList.add('wow', 'animate__fadeInUpSmall');
         list.setAttribute('data-wow-duration', '0.6s');
         list.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
 
     const contactsSocials = document.querySelectorAll('.contacts__socials');
     contactsSocials.forEach((socials, index) => {
-        socials.classList.add('wow', 'animate__fadeInUp');
+        socials.classList.add('wow', 'animate__fadeInUpSmall');
         socials.setAttribute('data-wow-duration', '0.6s');
         socials.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
@@ -190,7 +190,7 @@ function addAnimationClasses() {
     // Company элементы
     const companyBlockText = document.querySelectorAll('.company__block__text');
     companyBlockText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUp');
+        text.classList.add('wow', 'animate__fadeInUpSmall');
         text.setAttribute('data-wow-duration', '0.8s');
         text.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -198,21 +198,21 @@ function addAnimationClasses() {
     // Mission элементы
     const missionHeader = document.querySelectorAll('.mission__header');
     missionHeader.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     const missionBlockHeaders = document.querySelectorAll('.mission__block__header');
     missionBlockHeaders.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
 
     const missionBlockText = document.querySelectorAll('.mission__block__text');
     missionBlockText.forEach((text, index) => {
-        text.classList.add('wow', 'animate__fadeInUp');
+        text.classList.add('wow', 'animate__fadeInUpSmall');
         text.setAttribute('data-wow-duration', '0.8s');
         text.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
@@ -220,7 +220,7 @@ function addAnimationClasses() {
     // Values элементы
     const valuesHeader = document.querySelectorAll('.values__header');
     valuesHeader.forEach((header, index) => {
-        header.classList.add('wow', 'animate__fadeInUp');
+        header.classList.add('wow', 'animate__fadeInUpSmall');
         header.setAttribute('data-wow-duration', '0.8s');
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -228,7 +228,7 @@ function addAnimationClasses() {
     // Card элементы
     const cardTitles = document.querySelectorAll('.card__title');
     cardTitles.forEach((title, index) => {
-        title.classList.add('wow', 'animate__fadeInUp');
+        title.classList.add('wow', 'animate__fadeInUpSmall');
         title.setAttribute('data-wow-duration', '0.6s');
         title.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -236,7 +236,7 @@ function addAnimationClasses() {
     // Docs элементы
     const docsCards = document.querySelectorAll('.docs__card');
     docsCards.forEach((card, index) => {
-        card.classList.add('wow', 'animate__fadeInUp');
+        card.classList.add('wow', 'animate__fadeInUpSmall');
         card.setAttribute('data-wow-duration', '0.6s');
         card.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
@@ -270,7 +270,7 @@ function resetAnimationForElements(elements) {
                 if (element.hasAttribute('data-wow-animation')) {
                     element.classList.add(element.getAttribute('data-wow-animation'));
                 } else if (element.classList.contains('tariffs__tabs-sub')) {
-                    element.classList.add('animate__fadeInUp');
+                    element.classList.add('animate__fadeInUpSmall');
                 } else if (element.classList.contains('tariffs__content-sub__inner__image')) {
                     element.classList.add('animate__fadeInLeftSmall');
                 } else if (element.classList.contains('tariffs__content-sub__inner__card')) {
@@ -286,10 +286,10 @@ function addWowClassesToContainer(container) {
     // Добавляем классы для подтабов
     const tabsSubContainer = container.querySelector('.tariffs__tabs-sub');
     if (tabsSubContainer && !tabsSubContainer.classList.contains('wow')) {
-        tabsSubContainer.classList.add('wow', 'animate__fadeInUp');
+        tabsSubContainer.classList.add('wow', 'animate__fadeInUpSmall');
         tabsSubContainer.setAttribute('data-wow-duration', '0.6s');
         tabsSubContainer.setAttribute('data-wow-delay', '0s');
-        tabsSubContainer.setAttribute('data-wow-animation', 'animate__fadeInUp');
+        tabsSubContainer.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
     }
     
     // Добавляем классы для изображений
@@ -379,10 +379,10 @@ function addTariffsAnimationClasses() {
     // Добавляем классы для подтабов
     const tariffsTabsSub = document.querySelectorAll('.tariffs__tabs-sub');
     tariffsTabsSub.forEach(tabs => {
-        tabs.classList.add('wow', 'animate__fadeInUp');
+        tabs.classList.add('wow', 'animate__fadeInUpSmall');
         tabs.setAttribute('data-wow-duration', '0.6s');
         tabs.setAttribute('data-wow-delay', '0s');
-        tabs.setAttribute('data-wow-animation', 'animate__fadeInUp');
+        tabs.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
     });
     
     // Добавляем классы для изображений

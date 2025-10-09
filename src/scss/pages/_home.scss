@@ -28,12 +28,27 @@
     }
 }
 
+@keyframes fadeInUpSmall {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 5rem, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .animate__fadeInLeftSmall {
     animation-name: fadeInLeftSmall;
 }
 
 .animate__fadeInRightSmall {
     animation-name: fadeInRightSmall;
+}
+
+.animate__fadeInUpSmall {
+    animation-name: fadeInUpSmall;
 }
 .banner {
     background-image: url(../img/base/bg/mainscreen-bg.svg);
