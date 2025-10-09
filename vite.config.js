@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         company: resolve(__dirname, 'src/company.html'),
+        post: resolve(__dirname, 'src/post.html'),
         },
       output: {
         entryFileNames: 'js/[name]-[hash].js',
