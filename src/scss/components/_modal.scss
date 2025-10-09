@@ -189,7 +189,31 @@
     }
 }
 
+.modal {
+    .block__title {
+        width: 70%;
+    }
+}
+
 .modal__services {
+    &__description {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        color: #fff;
+        margin-top: 4rem;
+        text-wrap: balance;
+
+        @include mixins.media-down(lg) {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+        }
+        @include mixins.media-down(sm) {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+    }
+
+
     &__blocks {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -244,6 +268,12 @@
                 height: 3.8rem;
                 flex-shrink: 0;
             }
+            .card__text {
+                span {
+                    color: #A7A7A7;
+                }
+            }
+            
         }
     }
 }
@@ -260,6 +290,7 @@
         border-radius: 1.5rem;
         margin-top: 1rem;
     }
+
     @include mixins.media-down(sm) {
         padding: 1.5rem;
     }
@@ -278,7 +309,7 @@
         color: variables.$text-color;
         margin-bottom: 3rem;
         text-transform: uppercase;
-        
+
         @include mixins.media-down(lg) {
             font-size: 1.6rem;
             margin-bottom: 4rem;
@@ -302,6 +333,7 @@
                 @include mixins.media-down(lg) {
                     font-size: 1.4rem;
                 }
+
                 @include mixins.media-down(sm) {
                     font-size: 1.2rem;
                 }
