@@ -25,6 +25,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        width: fit-content;
 
         @include mixins.media-down(lg) {
             font-size: 1.4rem;
@@ -56,6 +57,10 @@
         @media (hover: hover) {
             &:hover {
                 color: #fff;
+
+                &::before {
+                filter: brightness(0) invert(1);    
+                }
             }
         }
     }
@@ -81,9 +86,12 @@
         padding: 2rem;
         border-radius: 3rem;
         border: .1rem solid #2f2f2f;
+        padding-bottom: 7.6rem;
 
         @include mixins.media-down(lg) {
             border-radius: 1.5rem;
+            padding-bottom: 5rem;
+
         }
         @include mixins.media-down(sm) {
             padding: .5rem;
