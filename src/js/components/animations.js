@@ -15,6 +15,14 @@ function addAnimationClasses() {
     //     card.setAttribute('data-wow-delay', `${index * 0.15}s`);
     // });
 
+    // Карточки services
+    const servicesCards = document.querySelectorAll('.services__card');
+    servicesCards.forEach((card, index) => {
+        card.classList.add('wow', 'animate__fadeInUpSmall');
+        card.setAttribute('data-wow-duration', '0.8s');
+        card.setAttribute('data-wow-delay', `${index * 0.15}s`);
+    });
+
     // Табы тарифов
     const tariffsTabs = document.querySelectorAll('.tariffs__tab-main');
     tariffsTabs.forEach((tab, index) => {
@@ -150,6 +158,13 @@ function addAnimationClasses() {
         video.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
+    const teamAccordionItems = document.querySelectorAll('.team__accordion-item');
+    teamAccordionItems.forEach((item, index) => {
+        item.classList.add('wow', 'animate__fadeInUpSmall');
+        item.setAttribute('data-wow-duration', '0.6s');
+        item.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    });
+
     // CTA элементы
     const ctaLeft = document.querySelectorAll('.cta__left');
     ctaLeft.forEach((element, index) => {
@@ -186,6 +201,13 @@ function addAnimationClasses() {
         text.classList.add('wow', 'animate__fadeInUpSmall');
         text.setAttribute('data-wow-duration', '0.8s');
         text.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    });
+
+    const companyBlockImg = document.querySelectorAll('.company__block__img');
+    companyBlockImg.forEach((img, index) => {
+        img.classList.add('wow', 'animate__fadeInUpSmall');
+        img.setAttribute('data-wow-duration', '0.8s');
+        img.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
     });
 
     // Mission элементы
@@ -230,6 +252,14 @@ function addAnimationClasses() {
         card.setAttribute('data-wow-duration', '0.6s');
         card.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
+
+    // Work элементы
+    const workImg = document.querySelectorAll('.work__img');
+    workImg.forEach((img, index) => {
+        img.classList.add('wow', 'animate__fadeInUpSmall');
+        img.setAttribute('data-wow-duration', '0.8s');
+        img.setAttribute('data-wow-delay', `${index * 0.1}s`);
+    });
 }
 
 // Глобальная переменная для WOW instance
@@ -273,6 +303,14 @@ function resetAnimationForElements(elements) {
                     const items = parent.querySelectorAll('.loading__grid-item');
                     const index = Array.from(items).indexOf(element);
                     element.classList.add(index === 0 ? 'animate__fadeInLeftSmall' : 'animate__fadeInRightSmall');
+                } else if (element.classList.contains('team__tab-sub')) {
+                    element.classList.add('animate__fadeInUpSmall');
+                } else if (element.classList.contains('team__content-main__inner__card')) {
+                    element.classList.add('animate__fadeInUpSmall');
+                } else if (element.classList.contains('team__video')) {
+                    element.classList.add('animate__fadeInUpSmall');
+                } else if (element.classList.contains('team__accordion-item')) {
+                    element.classList.add('animate__fadeInUpSmall');
                 }
             });
         });
@@ -395,6 +433,73 @@ function animateLoadingContent(container) {
     resetAnimationForElements(allElements);
 }
 
+// Функция для добавления WOW классов к элементам team
+function addTeamAnimationClasses(container) {
+    // Добавляем классы для подтабов
+    const teamTabsSub = container.querySelectorAll('.team__tab-sub');
+    teamTabsSub.forEach((tab, index) => {
+        if (!tab.classList.contains('wow')) {
+            tab.classList.add('wow', 'animate__fadeInUpSmall');
+            tab.setAttribute('data-wow-duration', '0.6s');
+            tab.setAttribute('data-wow-delay', `${index * 0.1}s`);
+            tab.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
+        }
+    });
+    
+    // Добавляем классы для карточек
+    const teamCards = container.querySelectorAll('.team__content-main__inner__card');
+    teamCards.forEach((card, index) => {
+        if (!card.classList.contains('wow')) {
+            card.classList.add('wow', 'animate__fadeInUpSmall');
+            card.setAttribute('data-wow-duration', '0.8s');
+            card.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
+            card.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
+        }
+    });
+    
+    // Добавляем классы для видео
+    const teamVideo = container.querySelectorAll('.team__video');
+    teamVideo.forEach((video, index) => {
+        if (!video.classList.contains('wow')) {
+            video.classList.add('wow', 'animate__fadeInUpSmall');
+            video.setAttribute('data-wow-duration', '0.8s');
+            video.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+            video.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
+        }
+    });
+    
+    // Добавляем классы для аккордеона
+    const teamAccordionItems = container.querySelectorAll('.team__accordion-item');
+    teamAccordionItems.forEach((item, index) => {
+        if (!item.classList.contains('wow')) {
+            item.classList.add('wow', 'animate__fadeInUpSmall');
+            item.setAttribute('data-wow-duration', '0.6s');
+            item.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+            item.setAttribute('data-wow-animation', 'animate__fadeInUpSmall');
+        }
+    });
+}
+
+// Функция для анимации элементов team при переключении табов
+function animateTeamContent(container) {
+    if (!container) return;
+    
+    // Добавляем WOW классы, если их еще нет
+    addTeamAnimationClasses(container);
+    
+    // Находим элементы для анимации
+    const teamTabsSub = container.querySelectorAll('.team__tab-sub');
+    const teamCards = container.querySelectorAll('.team__content-main__inner__card');
+    const teamVideo = container.querySelectorAll('.team__video');
+    const teamAccordionItems = container.querySelectorAll('.team__accordion-item');
+    
+    // Собираем все элементы для перезапуска анимации
+    const allElements = [...teamTabsSub, ...teamCards, ...teamVideo, ...teamAccordionItems];
+    
+    // Перезапускаем анимацию
+    resetAnimationForElements(allElements);
+}
+
 function initAnimations() {
     // Добавляем классы анимации к элементам
     addAnimationClasses();
@@ -406,6 +511,12 @@ function initAnimations() {
     const loadingContents = document.querySelectorAll('.loading__content-main');
     loadingContents.forEach(content => {
         addLoadingAnimationClasses(content);
+    });
+
+    // Добавляем WOW классы для элементов team
+    const teamContents = document.querySelectorAll('.team__content-main');
+    teamContents.forEach(content => {
+        addTeamAnimationClasses(content);
     });
 
     // Инициализируем WOW.js и сохраняем instance
@@ -453,5 +564,5 @@ function addTariffsAnimationClasses() {
     });
 }
 
-export { initAnimations, animateTariffsContent, animateTariffsTabs, animateLoadingContent, wowInstance };
+export { initAnimations, animateTariffsContent, animateTariffsTabs, animateLoadingContent, animateTeamContent, wowInstance };
 

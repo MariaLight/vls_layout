@@ -1,4 +1,4 @@
-import { animateTariffsContent, animateTariffsTabs, animateLoadingContent } from './animations.js';
+import { animateTariffsContent, animateTariffsTabs, animateLoadingContent, animateTeamContent } from './animations.js';
 
 function initTabs() {
     const mainTabs = document.querySelectorAll('.tariffs__tab-main');
@@ -119,6 +119,9 @@ function initTeamTabs() {
                 activeContent.classList.add('active');
                 initTeamSubTabs(activeContent);
                 initTeamAccordions(); // Инициализируем аккордеоны для новой вкладки
+                
+                // Запускаем анимацию для элементов team
+                animateTeamContent(activeContent);
             }
         });
     });
@@ -150,6 +153,9 @@ function initTeamSubTabs(container) {
             const activeSubContent = container.querySelector(`[data-cubcontent="${subtabName}"]`);
             if (activeSubContent) {
                 activeSubContent.classList.add('active');
+                
+                // Запускаем анимацию при переключении подтаба
+                animateTeamContent(container);
             }
         });
     });

@@ -221,6 +221,23 @@
     }
 }
 
+.header__contacts-link__img--mobile {
+    display: none;
+
+ }
+
+ @include mixins.media-down(sm) {
+     .header__contacts-link__img--mobile {
+         display: block;
+         width: 2.5rem !important;
+         height: 2.5rem !important;
+     }
+
+     .header__contacts-link__img--desctop {
+         display: none;
+     }
+ }
+
 // Мобильное меню
 .mobile-menu {
     position: fixed;
@@ -319,6 +336,8 @@
             min-width: 20rem;
             gap: 1.5rem;
             padding: 0.7rem;
+
+            
 
             @include mixins.media-down(md) {
                 height: auto;

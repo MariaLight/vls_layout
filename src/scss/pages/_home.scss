@@ -714,6 +714,10 @@
             padding-right: 15rem;
             padding-bottom: 3.5rem;
 
+            .glowing-dots {
+                display: none;
+            }
+
             @include mixins.media-down(lg) {
                 background-size: 9.2rem 14.9rem;
                 background-position: right 3rem;
@@ -731,6 +735,12 @@
                 width: 100%;
                 padding: 2.6rem 2rem 2rem 2rem;
 
+                .glowing-dots {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin: 0 auto;
+                }
 
                 &::before {
                     content: 'Решение';
@@ -820,6 +830,10 @@
                     li {
                         position: relative;
                         padding-left: 2.3rem;
+
+                        @include mixins.media-down(sm) {
+margin-bottom: 1.2rem;
+                        }
 
 
                         &::before {
@@ -3003,6 +3017,10 @@
         list-style: none;
         user-select: none;
         transition: all 0.3s ease;
+
+        svg {
+            flex-shrink:0;
+        }
 
         @include mixins.media-down(sm) {
             padding: 1.5rem;
