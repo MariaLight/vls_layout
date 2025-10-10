@@ -75,7 +75,13 @@
         text-wrap: balance;
 
         transition: opacity 0.8s ease, transform 0.8s ease;
+br {
+    display: none;
 
+    @include mixins.media-down(sm) {
+        display: block;
+    }
+}
         span {
             color: variables.$primary-color;
         }
