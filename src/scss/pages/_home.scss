@@ -11,6 +11,7 @@
         opacity: 0;
         transform: translate3d(-5rem, 0, 0);
     }
+
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -22,6 +23,7 @@
         opacity: 0;
         transform: translate3d(5rem, 0, 0);
     }
+
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -33,6 +35,7 @@
         opacity: 0;
         transform: translate3d(0, 5rem, 0);
     }
+
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -50,6 +53,7 @@
 .animate__fadeInUpSmall {
     animation-name: fadeInUpSmall;
 }
+
 .banner {
     background-image: url(../img/base/bg/mainscreen-bg.svg);
     background-size: cover;
@@ -75,13 +79,15 @@
         text-wrap: balance;
 
         transition: opacity 0.8s ease, transform 0.8s ease;
-br {
-    display: none;
 
-    @include mixins.media-down(sm) {
-        display: block;
-    }
-}
+        br {
+            display: none;
+
+            @include mixins.media-down(sm) {
+                display: block;
+            }
+        }
+
         span {
             color: variables.$primary-color;
         }
@@ -465,6 +471,7 @@ br {
                 margin-top: 5rem;
                 margin-left: 4.5rem;
             }
+
             @include mixins.media-down(sm) {
                 margin-top: -3rem;
                 margin-left: 0;
@@ -502,6 +509,7 @@ br {
                 width: 100%;
                 height: 100%;
             }
+
             @include mixins.media-down(sm) {
                 margin-top: -1rem;
                 margin-left: 0;
@@ -695,6 +703,7 @@ br {
 
                 @include mixins.media-down(sm) {
                     padding-right: 4rem;
+
                     br {
                         display: none;
                     }
@@ -823,6 +832,7 @@ br {
 
                 @include mixins.media-down(sm) {
                     font-size: 1.2rem;
+
                     br {
                         display: none;
                     }
@@ -838,7 +848,7 @@ br {
                         padding-left: 2.3rem;
 
                         @include mixins.media-down(sm) {
-margin-bottom: 1.2rem;
+                            margin-bottom: 1.2rem;
                         }
 
 
@@ -1195,6 +1205,13 @@ margin-bottom: 1.2rem;
                     justify-content: space-between;
                     position: relative;
 
+                    @include mixins.media-down(sm) {
+                        align-items: end;
+                        &:not(:last-child) {
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+
                     &__title {
                         font-size: 1.6rem;
                         font-weight: 400;
@@ -1208,6 +1225,8 @@ margin-bottom: 1.2rem;
                         @include mixins.media-down(sm) {
                             font-size: 1.2rem;
                             max-width: 60%;
+
+
                         }
 
                     }
@@ -1218,6 +1237,17 @@ margin-bottom: 1.2rem;
                         border-bottom: .1rem solid #707070;
                         order: 1;
                         margin-top: .9rem;
+
+                        @include mixins.media-down(sm) {
+                            border-bottom: .05rem solid #707070;
+                            content: "";
+                            flex-grow: 1;
+                            margin-top: .9rem;
+                            position: absolute;
+                            order: 1;
+                            width: 100%;
+                            bottom: -0.5rem;
+                        }
                     }
 
 
@@ -1371,7 +1401,7 @@ margin-bottom: 1.2rem;
         @include mixins.media-down(sm) {
             padding-left: 0;
             font-size: 1.2rem;
-            padding-right:2rem;
+            padding-right: 2rem;
         }
     }
 
@@ -1407,6 +1437,7 @@ margin-bottom: 1.2rem;
             padding: 2rem;
             min-height: 21rem;
         }
+
         @include mixins.media-down(sm) {
             padding: 3rem 2rem;
             border-radius: 1.5rem;
@@ -1430,6 +1461,7 @@ margin-bottom: 1.2rem;
                 @include mixins.media-down(lg) {
                     font-size: 1.4rem;
                 }
+
                 @include mixins.media-down(sm) {
                     font-size: 1.6rem;
                 }
@@ -1851,7 +1883,7 @@ margin-bottom: 1.2rem;
                         width: 3.3rem;
                         height: 3.3rem;
                         margin-right: -1rem;
-        margin-top: -1rem;
+                        margin-top: -1rem;
                     }
                 }
 
@@ -1929,9 +1961,11 @@ margin-bottom: 1.2rem;
             display: none;
         }
     }
+
     @include mixins.media-down(sm) {
 
-        .block__tag, .block__text {
+        .block__tag,
+        .block__text {
             display: block;
         }
     }
@@ -2249,6 +2283,7 @@ margin-bottom: 1.2rem;
         border: .1rem solid #2F2F2F;
         border-radius: 3rem;
         background-color: #1E1E1E;
+
         @include mixins.media-down(sm) {
             border-radius: 1.5rem;
         }
@@ -2354,6 +2389,7 @@ margin-bottom: 1.2rem;
         @include mixins.media-down(lg) {
             padding: 3rem;
         }
+
         @include mixins.media-down(sm) {
             padding: 2rem 2.5rem 3rem;
         }
@@ -2378,7 +2414,7 @@ margin-bottom: 1.2rem;
             gap: 1rem;
             grid-template-columns: 1fr;
             margin-bottom: 1rem;
-            
+
         }
     }
 
@@ -2390,6 +2426,7 @@ margin-bottom: 1.2rem;
         @include mixins.media-down(lg) {
             margin-top: 2rem;
         }
+
         @include mixins.media-down(sm) {
             margin-top: 3rem;
         }
@@ -2432,11 +2469,13 @@ margin-bottom: 1.2rem;
                 padding-left: 8rem;
             }
         }
+
         @include mixins.media-down(sm) {
             .block__text {
                 order: 1;
                 width: 100%;
                 padding-left: 0;
+
                 br {
                     display: none;
                 }
@@ -2968,6 +3007,7 @@ margin-bottom: 1.2rem;
 
         @include mixins.media-down(sm) {
             padding: 1.5rem;
+
             &:nth-child(2) {
                 padding: 2.3rem 2.4rem;
             }
@@ -3025,7 +3065,7 @@ margin-bottom: 1.2rem;
         transition: all 0.3s ease;
 
         svg {
-            flex-shrink:0;
+            flex-shrink: 0;
         }
 
         @include mixins.media-down(sm) {
@@ -3085,6 +3125,7 @@ margin-bottom: 1.2rem;
             color: #fff;
             text-transform: uppercase;
             margin-bottom: 2.4rem;
+
             @include mixins.media-down(sm) {
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
@@ -3103,6 +3144,7 @@ margin-bottom: 1.2rem;
             @include mixins.media-down(lg) {
                 margin-bottom: 4rem;
             }
+
             @include mixins.media-down(sm) {
                 margin-bottom: 2rem;
             }
@@ -3112,6 +3154,7 @@ margin-bottom: 1.2rem;
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
             @include mixins.media-down(sm) {
                 gap: 1rem;
             }
@@ -3167,6 +3210,7 @@ margin-bottom: 1.2rem;
         &__textarea {
             resize: none;
             min-height: 17.5rem;
+
             @include mixins.media-down(sm) {
                 min-height: 7rem;
             }
@@ -3213,6 +3257,7 @@ margin-bottom: 1.2rem;
 
                 @include mixins.media-down(sm) {
                     font-size: 0.9rem;
+
                     br {
                         display: none;
                     }
@@ -3308,6 +3353,7 @@ margin-bottom: 1.2rem;
         @include mixins.media-down(lg) {
             font-size: 1.4rem;
         }
+
         @include mixins.media-down(sm) {
             font-size: 1.6rem;
             margin-bottom: 0;
