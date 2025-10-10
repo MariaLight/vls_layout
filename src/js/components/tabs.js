@@ -162,17 +162,13 @@ function initTeamSubTabs(container) {
 }
 
 function initTeamAccordions() {
-    console.log('Инициализация аккордеонов...');
     
     // Находим все заголовки аккордеонов
     const accordionHeaders = document.querySelectorAll('.team__accordion-header');
     
     if (!accordionHeaders.length) {
-        console.log('Аккордеоны не найдены');
         return;
     }
-
-    console.log('Найдено аккордеонов:', accordionHeaders.length);
 
     // Удаляем все предыдущие обработчики
     accordionHeaders.forEach(header => {
@@ -187,13 +183,11 @@ function initTeamAccordions() {
             e.preventDefault();
             e.stopPropagation();
             
-            console.log('Клик по аккордеону');
             
             const accordionId = this.dataset.accordion;
             const content = document.querySelector(`[data-accordion-content="${accordionId}"]`);
             
             if (!content) {
-                console.log('Контент не найден');
                 return;
             }
 
@@ -212,8 +206,7 @@ function initTeamAccordions() {
             this.classList.toggle('active');
             content.classList.toggle('active');
             
-            console.log('Аккордеон переключен:', this.classList.contains('active'));
-        });
+           });
     });
 }
 

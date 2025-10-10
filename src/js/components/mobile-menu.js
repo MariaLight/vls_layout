@@ -3,46 +3,29 @@
  */
 
 export function initMobileMenu() {
-    console.log('initMobileMenu вызвана');
     const burgerButton = document.querySelector('.header__burger');
     const closeButton = document.querySelector('.mobile-menu__close');
     const mobileMenu = document.querySelector('.mobile-menu');
 
-    console.log('burgerButton:', burgerButton);
-    console.log('closeButton:', closeButton);
-    console.log('mobileMenu:', mobileMenu);
-
     if (!burgerButton || !closeButton || !mobileMenu) {
-        console.log('Один из элементов не найден!');
         return;
     }
-    
-    console.log('Все элементы найдены, добавляем обработчики');
 
     // Функция для открытия меню
     function openMenu() {
-        console.log('openMenu вызвана');
         mobileMenu.classList.add('mobile-menu--active');
         document.body.style.overflow = 'hidden';
-        console.log('Меню открыто, классы:', mobileMenu.classList);
     }
 
     // Функция для закрытия меню
     function closeMenu() {
-        console.log('closeMenu вызвана');
         mobileMenu.classList.remove('mobile-menu--active');
         document.body.style.overflow = '';
     }
 
     // Обработчики событий
-    burgerButton.addEventListener('click', () => {
-        console.log('Клик по кнопке бургера');
-        openMenu();
-    });
-    closeButton.addEventListener('click', () => {
-        console.log('Клик по кнопке закрытия');
-        closeMenu();
-    });
+    burgerButton.addEventListener('click', openMenu);
+    closeButton.addEventListener('click', closeMenu);
 
     // Закрытие меню при клике на ссылки навигации
     const navLinks = mobileMenu.querySelectorAll('.mobile-menu__nav-link');

@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   mode: process.env.NODE_ENV || 'development',
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/vls_layout/dist/' : '/',
   root: resolve(__dirname, 'src'),
   build: {
     outDir: resolve(__dirname, 'dist'),

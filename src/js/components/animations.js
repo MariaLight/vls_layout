@@ -7,13 +7,22 @@ function addAnimationClasses() {
         header.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
-    // Карточки problems
-    // const problemCards = document.querySelectorAll('.problems__card');
-    // problemCards.forEach((card, index) => {
-    //     card.classList.add('wow', 'animate__fadeInUp');
-    //     card.setAttribute('data-wow-duration', '0.8s');
-    //     card.setAttribute('data-wow-delay', `${index * 0.15}s`);
-    // });
+    // Карточки problems - анимация только на мобильных
+    if (window.innerWidth <= 992) {
+        const problemCardsLeft = document.querySelectorAll('.problems__card__left');
+        problemCardsLeft.forEach((card, index) => {
+            card.classList.add('wow', 'animate__fadeInLeftSmall');
+            card.setAttribute('data-wow-duration', '0.8s');
+            card.setAttribute('data-wow-delay', `${index * 0.15}s`);
+        });
+
+        const problemCardsRight = document.querySelectorAll('.problems__card__right');
+        problemCardsRight.forEach((card, index) => {
+            card.classList.add('wow', 'animate__fadeInRightSmall');
+            card.setAttribute('data-wow-duration', '0.8s');
+            card.setAttribute('data-wow-delay', `${0.1 + index * 0.15}s`);
+        });
+    }
 
     // Карточки services
     const servicesCards = document.querySelectorAll('.services__card');
@@ -260,6 +269,16 @@ function addAnimationClasses() {
         img.setAttribute('data-wow-duration', '0.8s');
         img.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
+
+    // More блоки - анимация только на мобильных
+    if (window.innerWidth <= 992) {
+        const moreBlocks = document.querySelectorAll('.more__block');
+        moreBlocks.forEach((block, index) => {
+            block.classList.add('wow', 'animate__fadeInUpSmall');
+            block.setAttribute('data-wow-duration', '0.8s');
+            block.setAttribute('data-wow-delay', `${index * 0.15}s`);
+        });
+    }
 }
 
 // Глобальная переменная для WOW instance

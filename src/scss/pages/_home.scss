@@ -563,7 +563,7 @@
                 min-height: 21rem;
                 width: 100%;
                 padding-right: 6rem;
-                padding-bottom: 1rem;
+                padding-bottom: 2rem;
                 display: flex;
                 flex-direction: column;
                 border-radius: 1.5rem;
@@ -2761,7 +2761,7 @@ margin-bottom: 1.2rem;
         border-radius: 1.5rem;
         background-color: #1E1E1E;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
 
         @media (hover: hover) {
             &:hover {
@@ -2779,7 +2779,7 @@ margin-bottom: 1.2rem;
         background: transparent;
         border: none;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
 
         &__content {
             display: flex;
@@ -2838,7 +2838,7 @@ margin-bottom: 1.2rem;
             width: 3.9rem;
             height: 3.9rem;
             flex-shrink: 0;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
 
             svg {
                 width: 100%;
