@@ -45,7 +45,7 @@ function addAnimationClasses() {
         description.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
     });
 
-    const aboutButtons = document.querySelectorAll('.about .btn-man');
+    const aboutButtons = document.querySelectorAll('.about-btn');
     aboutButtons.forEach((button, index) => {
         button.classList.add('wow', 'animate__fadeInUpSmall');
         button.setAttribute('data-wow-duration', '0.6s');
@@ -134,6 +134,20 @@ function addAnimationClasses() {
         tab.classList.add('wow', 'animate__fadeInUpSmall');
         tab.setAttribute('data-wow-duration', '0.6s');
         tab.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+    });
+
+    const teamCards = document.querySelectorAll('.team__content-main__inner__card');
+    teamCards.forEach((card, index) => {
+        card.classList.add('wow', 'animate__fadeInUpSmall');
+        card.setAttribute('data-wow-duration', '0.8s');
+        card.setAttribute('data-wow-delay', `${0.2 + index * 0.1}s`);
+    });
+
+    const teamVideo = document.querySelectorAll('.team__video');
+    teamVideo.forEach((video, index) => {
+        video.classList.add('wow', 'animate__fadeInUpSmall');
+        video.setAttribute('data-wow-duration', '0.8s');
+        video.setAttribute('data-wow-delay', `${index * 0.1}s`);
     });
 
     // CTA элементы
