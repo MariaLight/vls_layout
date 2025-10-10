@@ -18,7 +18,7 @@ function initVideoAnimation() {
     gsap.fromTo(video, {scale:0.8}, {scale:1, ease: "none", force3D:true,
         scrollTrigger:({
         pin:true,
-        trigger: videoContainer,  
+        trigger: banner,  
         start: "top top",    
         end: "bottom top",
         scrub: true,
