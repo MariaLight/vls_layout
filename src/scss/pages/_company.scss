@@ -160,7 +160,7 @@
     @include mixins.media-down(sm) {
         background-image: none;
         border: none;
-        
+
     }
 
     &__header {
@@ -188,6 +188,7 @@
             align-items: flex-start;
             gap: 2rem;
             margin-bottom: 4rem;
+
             .block__text {
                 text-align: left;
             }
@@ -305,7 +306,7 @@
             color: #BABABA;
 
             @include mixins.media-down(lg) {
-                    font-size: 1.4rem;
+                font-size: 1.4rem;
             }
 
             @include mixins.media-down(sm) {
@@ -358,6 +359,7 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 6rem;
+
         .block__title {
             width: auto;
         }
@@ -437,7 +439,7 @@
 
             &::-webkit-scrollbar-thumb {
                 background-color: #00985B;
-                    border-radius: 0.2rem;
+                border-radius: 0.2rem;
             }
         }
     }
@@ -579,6 +581,7 @@
 
     &__swiper-pagination {
         margin-bottom: 2rem;
+
         .swiper-pagination-bullet {
             width: 0.8rem;
             height: 0.8rem;
@@ -596,17 +599,20 @@
 }
 
 .more {
-    position: relative;
+position: relative;
+    @include mixins.media-down(lg) {
+        position: relative; // Отключаем sticky на мобильных
+        top: auto;
+    }
 
     .block__header {
-        position: sticky;
-        top: 7rem;
+        // position: sticky;
+        // top: 7rem;
         z-index: -1;
         padding-bottom: 2rem;
+        margin-bottom: 6rem;
 
         @include mixins.media-down(lg) {
-            position: relative; // Отключаем sticky на мобильных
-            top: auto;
             background-color: transparent;
             padding-bottom: 0;
         }
@@ -628,7 +634,6 @@
     }
 
     &__inner {
-        margin-top: 6rem;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -646,8 +651,18 @@
         grid-template-columns: 3fr 1fr;
         gap: 2rem;
         height: 45.1rem;
-        position: sticky;
-        top: 20rem; // Все карточки липнут к одной позиции
+
+        &__wrapper {
+            position: sticky;
+            top: 20rem; // Все карточки липнут к одной позиции
+            &:first-child {
+                top: 8rem;
+            }
+
+            @include mixins.media-down(lg) {
+                position: static;
+            }
+        }
 
         @include mixins.media-down(lg) {
             display: flex;
@@ -955,7 +970,7 @@
 .work {
     &__img {
         width: 100%;
-            max-height: 37.2rem;
+        max-height: 37.2rem;
         border-radius: 3rem;
         overflow: hidden;
         margin-bottom: 4rem;
@@ -984,6 +999,7 @@
         .block__header .block__title {
             display: none;
         }
+
         .work .block__header {
             flex-direction: row;
         }
@@ -1004,7 +1020,8 @@
         &__img {
             border-radius: 2.6rem;
         }
-        .work__btn  {
+
+        .work__btn {
             order: 2;
         }
     }
@@ -1025,7 +1042,8 @@
             gap: 2rem;
             align-items: start;
         }
-        .work__btn  {
+
+        .work__btn {
             width: 100%;
         }
     }
@@ -1246,6 +1264,7 @@
 
 .docs {
     position: relative;
+
     &::before {
         content: '';
         position: absolute;
@@ -1260,6 +1279,7 @@
         z-index: -1;
         display: block;
     }
+
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -1357,8 +1377,10 @@
 
 .cta-2 {
     padding-bottom: 0;
+
     .block__text {
         max-width: 30.5rem;
+
         @include mixins.media-down(lg) {
             max-width: 100%;
 
@@ -1368,6 +1390,7 @@
     .block__title {
         @include mixins.media-down(lg) {
             font-size: 3.8rem;
+
             &::before {
                 width: 2.2rem;
                 height: 2.2rem;
@@ -1375,6 +1398,7 @@
 
             }
         }
+
         @include mixins.media-down(sm) {
             font-size: 2rem;
         }
@@ -1393,6 +1417,7 @@
         .cta__form-row {
             grid-template-columns: 1fr;
         }
+
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr;
             padding: 4rem 3rem;
@@ -1401,14 +1426,17 @@
             &__right {
                 display: none;
             }
+
             .cta__form-row {
                 grid-template-columns: 1fr 1fr;
             }
-            
+
         }
+
         @include mixins.media-down(sm) {
             padding: 2.5rem 2rem;
             margin-top: 4rem;
+
             .cta__form-row {
                 grid-template-columns: 1fr;
             }
