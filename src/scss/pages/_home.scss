@@ -57,6 +57,7 @@
     background-repeat: no-repeat;
 
     padding-top: 1rem;
+    padding-bottom: 0;
 
     @include mixins.media-down(sm) {
         padding-top: 2rem;
@@ -120,7 +121,7 @@
         }
 
         &__video {
-            height: 38.9rem;
+            // height: 38.9rem;
             width: 72.8rem;
 
             // Дополнительная оптимизация для планшетов
@@ -149,7 +150,7 @@
         }
 
         &__video {
-            height: 54rem;
+            // height: 54rem;
             width: 100%;
         }
     }
@@ -176,14 +177,16 @@
 }
 
 .problems {
-    padding-top: 15rem;
+    padding-top: 0;
 
     @include mixins.media-down(lg) {
-        padding-top: 7rem;
+        padding-top: 0;
     }
 
     @include mixins.media-down(sm) {
-        padding-top: 8.5rem;
+        padding-top: 0;
+        margin-top: -20rem;
+
 
         .block__text {
             max-width: 90%;
