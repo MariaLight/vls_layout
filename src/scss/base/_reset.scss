@@ -94,11 +94,12 @@ html.lenis body {
     padding: 2rem 0 14rem;
 
     @include mixins.media-down(lg) {
-        overflow: hidden;
+        overflow: visible !important;
     }
 
-    @include mixins.media-down(lg) {
+    @include mixins.media-down(sm) {
         padding: 2rem 0 8rem;
+        overflow: hidden !important;
     }
 }
 

@@ -231,7 +231,7 @@
         }
 
         @include mixins.media-down(sm) {
-            padding: 2.5rem;
+            padding: 2.5rem 2rem;
         }
 
         &__header {
@@ -731,7 +731,7 @@
         }
 
         @include mixins.media-down(sm) {
-            padding: 0 1rem 2rem;
+            padding: 0 1.5rem 2rem;
             background-color: transparent;
             border: none;
             gap: 4rem;

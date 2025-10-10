@@ -191,6 +191,7 @@
 .problems {
     padding-top: 0;
 
+
     @include mixins.media-down(lg) {
         padding-top: 0;
     }
@@ -335,9 +336,9 @@
         display: flex;
         align-items: center;
         gap: 1.6rem;
-        margin-bottom: 3rem;
-        position: sticky;
-        top: 20rem;
+        margin-bottom: 2rem;
+        // position: sticky;
+        // top: 20rem;
 
 
 
@@ -409,13 +410,30 @@
         // grid-template-columns: 1fr 3fr;
         gap: 1.4rem;
         height: 40rem;
-        counter-increment: problems-card;
-        position: sticky;
-        top: 26rem;
+        position: relative;
+
+        &__wrapper {
+            position: sticky;
+            top: 25rem;
+            counter-increment: problems-card;
+
+            &:first-child {
+                top: 8rem;
+            }
+
+            @include mixins.media-down(lg) {
+                top: 28rem;
+                &:first-child {
+                    top: 8rem;
+                }
+            }
+            @include mixins.media-down(sm) {
+                position: static;
+            }
+        }
 
         @include mixins.media-down(lg) {
             grid-template-columns: 1fr 2fr;
-            position: static;
             gap: 2rem;
             height: 41rem;
         }
@@ -427,6 +445,8 @@
             top: 0;
             flex-direction: column;
             height: auto;
+            position: static;
+
         }
 
         &:nth-child(1) .problems__card__left__img {
@@ -530,9 +550,9 @@
             }
 
             @include mixins.media-down(sm) {
-                margin-top: 1rem;
+                margin-right: 13rem;
+                margin-top: 0rem;
                 margin-left: 0;
-                margin-right: 12rem;
             }
 
         }
@@ -555,6 +575,7 @@
             padding-bottom: 3.5rem;
             display: flex;
             flex-direction: column;
+            position: relative;
 
             @include mixins.media-down(lg) {
                 width: 26.1rem;
@@ -873,9 +894,10 @@
     }
 }
 
-.problems .block__header {
+.problems .container {
     position: sticky;
     top: 7rem;
+
 
     @include mixins.media-down(sm) {
         position: static;
@@ -1113,10 +1135,8 @@
                 }
 
                 @include mixins.media-down(sm) {
-                    padding: 1.5rem;
+                    padding: 2.5rem 2rem 2.6rem;
                     border-radius: 1.5rem;
-                    padding-right: 1rem;
-                    padding-left: 1rem;
                 }
 
                 &::after {
@@ -1207,8 +1227,9 @@
 
                     @include mixins.media-down(sm) {
                         align-items: end;
+
                         &:not(:last-child) {
-                            margin-bottom: 1.5rem;
+                            margin-bottom: .89rem;
                         }
                     }
 
@@ -1239,14 +1260,14 @@
                         margin-top: .9rem;
 
                         @include mixins.media-down(sm) {
-                            border-bottom: .05rem solid #707070;
+                            border-bottom: .05rem solid #474747;
                             content: "";
                             flex-grow: 1;
                             margin-top: .9rem;
                             position: absolute;
                             order: 1;
                             width: 100%;
-                            bottom: -0.5rem;
+                            bottom: -0.1rem;
                         }
                     }
 
@@ -1266,6 +1287,7 @@
                             font-size: 1.2rem;
                             width: 9rem;
                             text-wrap: balance;
+                            line-height: 1.35;
                         }
                     }
                 }
@@ -2391,7 +2413,7 @@
         }
 
         @include mixins.media-down(sm) {
-            padding: 2rem 2.5rem 3rem;
+            padding: 2rem 2rem 3rem;
         }
     }
 
@@ -3009,7 +3031,7 @@
             padding: 1.5rem;
 
             &:nth-child(2) {
-                padding: 2.3rem 2.4rem;
+                padding: 2.5rem 2rem;
             }
         }
     }
@@ -3069,7 +3091,7 @@
         }
 
         @include mixins.media-down(sm) {
-            padding: 1.5rem;
+            padding: 2.5rem 2rem;
         }
 
         &::-webkit-details-marker {
